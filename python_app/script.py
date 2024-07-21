@@ -1,0 +1,1 @@
+print('EXECUTOU O SCRIPT')

@@ -7,7 +7,12 @@ Para remover os volumes docker
 docker-compose down -v
 ```
 
-Para executar os containers
+Para fazer build e executar os container
 ```
 docker-compose up --build
+```
+
+Para executar os container depois de ter feito build
+```
+docker-compose up
 ```

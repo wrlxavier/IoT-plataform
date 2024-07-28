@@ -1,1546 +1,1575 @@
 {
-    "annotations": {
-      "list": [
-        {
-          "builtIn": 1,
-          "datasource": {
-            "type": "grafana",
-            "uid": "-- Grafana --"
-          },
-          "enable": true,
-          "hide": true,
-          "iconColor": "rgba(0, 211, 255, 1)",
-          "name": "Annotations & Alerts",
-          "type": "dashboard"
-        }
-      ]
-    },
-    "editable": true,
-    "fiscalYearStartMonth": 0,
-    "graphTooltip": 0,
-    "id": 13,
-    "links": [],
-    "panels": [
+  "annotations": {
+    "list": [
       {
+        "builtIn": 1,
         "datasource": {
-          "type": "grafana-postgresql-datasource",
-          "uid": "cdsd6ixjrqww0c"
+          "type": "grafana",
+          "uid": "-- Grafana --"
         },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "celsius"
-          },
-          "overrides": []
-        },
-        "id": 4,
-        "options": {
-          "infinitePan": false,
-          "inlineEditing": false,
-          "panZoom": false,
-          "root": {
-            "background": {
-              "color": {
-                "fixed": "dark-yellow"
-              },
-              "image": {
-                "mode": "fixed"
-              }
-            },
-            "border": {
-              "color": {
-                "fixed": "dark-green"
-              }
-            },
-            "constraint": {
-              "horizontal": "left",
-              "vertical": "top"
-            },
-            "elements": [
-              {
-                "background": {
-                  "color": {
-                    "fixed": "#23282f"
-                  }
-                },
-                "border": {
-                  "color": {
-                    "fixed": "dark-green"
-                  }
-                },
-                "config": {
-                  "align": "center",
-                  "color": {
-                    "fixed": "semi-dark-red"
-                  },
-                  "valign": "middle"
-                },
-                "constraint": {
-                  "horizontal": "left",
-                  "vertical": "top"
-                },
-                "name": "Element 4",
-                "placement": {
-                  "height": 160,
-                  "left": 0,
-                  "top": 0,
-                  "width": 400
-                },
-                "type": "rectangle"
-              },
-              {
-                "background": {
-                  "color": {
-                    "fixed": "transparent"
-                  }
-                },
-                "border": {
-                  "color": {
-                    "fixed": "dark-green"
-                  }
-                },
-                "config": {
-                  "align": "left",
-                  "color": {
-                    "fixed": "#ffffff"
-                  },
-                  "size": 20,
-                  "text": {
-                    "field": "value",
-                    "fixed": "",
-                    "mode": "field"
-                  },
-                  "valign": "top"
-                },
-                "constraint": {
-                  "horizontal": "left",
-                  "vertical": "top"
-                },
-                "name": "Element 1",
-                "placement": {
-                  "height": 25,
-                  "left": 90,
-                  "top": 45,
-                  "width": 142
-                },
-                "type": "metric-value"
-              },
-              {
-                "background": {
-                  "color": {
-                    "fixed": "transparent"
-                  }
-                },
-                "border": {
-                  "color": {
-                    "fixed": "dark-green"
-                  }
-                },
-                "config": {
-                  "fill": {
-                    "fixed": "#D9D9D9"
-                  },
-                  "path": {
-                    "fixed": "<svg width=\"106\" height=\"106\" viewBox=\"0 0 106 106\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"> <path d=\"M58.2005 73.1552V8.74105C58.2005 3.92137 54.2793 0 49.4594 0C44.6393 0 40.7184 3.92137 40.7184 8.74105V73.1552C35.2546 76.2799 31.8893 82.008 31.8666 88.343C31.8504 92.8891 33.6224 97.237 36.8554 100.585C40.09 103.935 44.3737 105.855 48.917 105.992C49.1004 105.997 49.2828 106 49.4654 106C54.0671 106 58.3967 104.248 61.7096 101.034C65.1551 97.6906 67.0523 93.2063 67.0523 88.4067C67.0521 82.0445 63.6866 76.2919 58.2005 73.1552ZM59.3981 98.6514C56.6041 101.363 52.9148 102.793 49.0172 102.673C45.3443 102.563 41.8732 101.002 39.2433 98.279C36.6138 95.5561 35.1728 92.0316 35.1861 88.3546C35.2053 82.9343 38.2446 78.0604 43.1174 75.635C43.6814 75.3545 44.0375 74.7787 44.0375 74.1491V8.74105C44.0375 5.75152 46.4697 3.31933 49.4592 3.31933C52.4487 3.31933 54.8809 5.75152 54.8809 8.74105V74.1493C54.8809 74.7791 55.2372 75.3545 55.801 75.6352C60.6935 78.0703 63.7325 82.9641 63.7325 88.4067C63.7328 92.3008 62.1935 95.9391 59.3981 98.6514Z\" fill=\"#55606E\"/> <path d=\"M51.1191 78.0276V19.3632C51.1191 18.4467 50.3761 17.7034 49.4593 17.7034C48.5428 17.7034 47.7996 18.4464 47.7996 19.3632V78.0276C42.7894 78.8257 38.9478 83.1757 38.9478 88.4067C38.9478 94.2025 43.6633 98.9181 49.4591 98.9181C55.255 98.9181 59.9705 94.2025 59.9705 88.4067C59.9709 83.1757 56.1292 78.8257 51.1191 78.0276ZM49.4595 95.5988C45.4939 95.5988 42.2675 92.3724 42.2675 88.4067C42.2675 84.441 45.4939 81.2147 49.4595 81.2147C53.4252 81.2147 56.6516 84.441 56.6516 88.4067C56.6516 92.3724 53.4252 95.5988 49.4595 95.5988Z\" fill=\"#FF0000\"/> <path d=\"M72.4737 53.1104H63.6219C62.7054 53.1104 61.9622 53.8535 61.9622 54.7702C61.9622 55.6869 62.7052 56.43 63.6219 56.43H72.4737C73.3903 56.43 74.1335 55.6869 74.1335 54.7702C74.1335 53.8535 73.3907 53.1104 72.4737 53.1104Z\" fill=\"#55606E\"/> <path d=\"M68.9331 44.2586H63.6222C62.7056 44.2586 61.9624 45.0017 61.9624 45.9184C61.9624 46.8349 62.7054 47.5782 63.6222 47.5782H68.9331C69.8497 47.5782 70.5929 46.8351 70.5929 45.9184C70.5929 45.0019 69.8497 44.2586 68.9331 44.2586Z\" fill=\"#55606E\"/> <path d=\"M72.4737 35.407H63.6219C62.7054 35.407 61.9622 36.1501 61.9622 37.0668C61.9622 37.9833 62.7052 38.7266 63.6219 38.7266H72.4737C73.3903 38.7266 74.1335 37.9835 74.1335 37.0668C74.1335 36.1501 73.3907 35.407 72.4737 35.407Z\" fill=\"#55606E\"/> <path d=\"M68.9331 26.5552H63.6222C62.7056 26.5552 61.9624 27.2983 61.9624 28.215C61.9624 29.1315 62.7054 29.8748 63.6222 29.8748H68.9331C69.8497 29.8748 70.5929 29.1317 70.5929 28.215C70.5929 27.2983 69.8497 26.5552 68.9331 26.5552Z\" fill=\"#55606E\"/> <path d=\"M72.4737 17.7034H63.6219C62.7054 17.7034 61.9622 18.4464 61.9622 19.3632C61.9622 20.2797 62.7052 21.0229 63.6219 21.0229H72.4737C73.3903 21.0229 74.1335 20.2799 74.1335 19.3632C74.1335 18.4467 73.3905 17.7034 72.4737 17.7034Z\" fill=\"#55606E\"/> </svg>",
-                    "mode": "fixed"
-                  }
-                },
-                "constraint": {
-                  "horizontal": "left",
-                  "vertical": "top"
-                },
-                "name": "Element 2",
-                "placement": {
-                  "height": 50,
-                  "left": 20,
-                  "top": 20,
-                  "width": 50
-                },
-                "type": "icon"
-              },
-              {
-                "background": {
-                  "color": {
-                    "fixed": "transparent"
-                  }
-                },
-                "border": {
-                  "color": {
-                    "fixed": "dark-green"
-                  }
-                },
-                "config": {
-                  "align": "left",
-                  "color": {
-                    "fixed": "#ccccdc"
-                  },
-                  "size": 18,
-                  "text": {
-                    "fixed": "Temperatura"
-                  },
-                  "valign": "top"
-                },
-                "constraint": {
-                  "horizontal": "left",
-                  "vertical": "top"
-                },
-                "name": "Element 3",
-                "placement": {
-                  "height": 25,
-                  "left": 90,
-                  "top": 20,
-                  "width": 244
-                },
-                "type": "text"
-              }
-            ],
-            "name": "Element 1722087966938",
-            "placement": {
-              "height": 100,
-              "left": 0,
-              "rotation": 0,
-              "top": 0,
-              "width": 100
-            },
-            "type": "frame"
-          },
-          "showAdvancedTypes": true
-        },
-        "pluginVersion": "11.1.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "grafana-postgresql-datasource",
-              "uid": "cdsd6ixjrqww0c"
-            },
-            "editorMode": "code",
-            "format": "table",
-            "rawQuery": true,
-            "rawSql": "SELECT\r\n  time AS \"time\",\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\n",
-            "refId": "A",
-            "sql": {
-              "columns": [
-                {
-                  "parameters": [],
-                  "type": "function"
-                }
-              ],
-              "groupBy": [
-                {
-                  "property": {
-                    "type": "string"
-                  },
-                  "type": "groupBy"
-                }
-              ],
-              "limit": 50
-            }
-          }
-        ],
-        "type": "canvas"
-      },
-      {
-        "datasource": {
-          "type": "grafana-postgresql-datasource",
-          "uid": "cdsd6ixjrqww0c"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "percent"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 3,
-          "w": 6,
-          "x": 6,
-          "y": 0
-        },
-        "id": 7,
-        "options": {
-          "infinitePan": false,
-          "inlineEditing": false,
-          "panZoom": false,
-          "root": {
-            "background": {
-              "color": {
-                "fixed": "transparent"
-              },
-              "image": {
-                "mode": "fixed"
-              }
-            },
-            "border": {
-              "color": {
-                "fixed": "dark-green"
-              }
-            },
-            "constraint": {
-              "horizontal": "left",
-              "vertical": "top"
-            },
-            "elements": [
-              {
-                "background": {
-                  "color": {
-                    "fixed": "#23282f"
-                  }
-                },
-                "border": {
-                  "color": {
-                    "fixed": "dark-green"
-                  }
-                },
-                "config": {
-                  "align": "center",
-                  "color": {
-                    "fixed": "#000000"
-                  },
-                  "valign": "middle"
-                },
-                "constraint": {
-                  "horizontal": "left",
-                  "vertical": "top"
-                },
-                "name": "Element 4",
-                "placement": {
-                  "height": 160,
-                  "left": 0,
-                  "top": 0,
-                  "width": 400
-                },
-                "type": "rectangle"
-              },
-              {
-                "background": {
-                  "color": {
-                    "fixed": "transparent"
-                  }
-                },
-                "border": {
-                  "color": {
-                    "fixed": "dark-green"
-                  }
-                },
-                "config": {
-                  "align": "left",
-                  "color": {
-                    "fixed": "#ffffff"
-                  },
-                  "size": 20,
-                  "text": {
-                    "field": "value",
-                    "fixed": "",
-                    "mode": "field"
-                  },
-                  "valign": "top"
-                },
-                "constraint": {
-                  "horizontal": "left",
-                  "vertical": "top"
-                },
-                "name": "Element 1",
-                "placement": {
-                  "height": 25,
-                  "left": 90,
-                  "top": 45,
-                  "width": 142
-                },
-                "type": "metric-value"
-              },
-              {
-                "background": {
-                  "color": {
-                    "fixed": "transparent"
-                  }
-                },
-                "border": {
-                  "color": {
-                    "fixed": "dark-green"
-                  }
-                },
-                "config": {
-                  "fill": {
-                    "fixed": "#D9D9D9"
-                  },
-                  "path": {
-                    "fixed": "<svg width=\"800\" height=\"800\" viewBox=\"0 0 800 800\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M241.667 350C225.252 350 208.997 346.767 193.831 340.485C178.666 334.203 164.886 324.996 153.278 313.388C141.671 301.781 132.464 288.001 126.182 272.835C119.9 257.67 116.667 241.415 116.667 225C116.667 208.585 119.9 192.33 126.182 177.165C132.464 161.999 141.671 148.219 153.278 136.612C164.886 125.004 178.666 115.797 193.831 109.515C208.997 103.233 225.252 100 241.667 100C274.819 100 306.613 113.17 330.055 136.612C353.497 160.054 366.667 191.848 366.667 225C366.667 258.152 353.497 289.946 330.055 313.388C306.613 336.83 274.819 350 241.667 350ZM190.233 656.9C183.947 662.972 175.527 666.332 166.787 666.256C158.047 666.18 149.686 662.674 143.506 656.494C137.326 650.314 133.82 641.953 133.744 633.213C133.668 624.473 137.028 616.053 143.1 609.767L609.767 143.1C612.842 139.916 616.52 137.377 620.587 135.63C624.653 133.883 629.027 132.963 633.453 132.925C637.879 132.887 642.269 133.73 646.365 135.406C650.462 137.082 654.183 139.557 657.313 142.687C660.443 145.817 662.918 149.538 664.594 153.635C666.27 157.731 667.114 162.121 667.075 166.547C667.037 170.973 666.117 175.347 664.37 179.413C662.623 183.48 660.084 187.158 656.9 190.233L190.233 656.9ZM433.333 575C433.333 608.152 446.503 639.946 469.945 663.388C493.387 686.83 525.181 700 558.333 700C591.485 700 623.28 686.83 646.722 663.388C670.164 639.946 683.333 608.152 683.333 575C683.333 541.848 670.164 510.054 646.722 486.612C623.28 463.17 591.485 450 558.333 450C525.181 450 493.387 463.17 469.945 486.612C446.503 510.054 433.333 541.848 433.333 575ZM241.667 283.333C257.138 283.333 271.975 277.188 282.915 266.248C293.854 255.308 300 240.471 300 225C300 209.529 293.854 194.692 282.915 183.752C271.975 172.812 257.138 166.667 241.667 166.667C226.196 166.667 211.358 172.812 200.419 183.752C189.479 194.692 183.333 209.529 183.333 225C183.333 240.471 189.479 255.308 200.419 266.248C211.358 277.188 226.196 283.333 241.667 283.333ZM616.667 575C616.667 590.471 610.521 605.308 599.581 616.248C588.642 627.187 573.804 633.333 558.333 633.333C542.862 633.333 528.025 627.187 517.085 616.248C506.146 605.308 500 590.471 500 575C500 559.529 506.146 544.692 517.085 533.752C528.025 522.812 542.862 516.667 558.333 516.667C573.804 516.667 588.642 522.812 599.581 533.752C610.521 544.692 616.667 559.529 616.667 575Z\" fill=\"#AD2222\"/> </svg>",
-                    "mode": "fixed"
-                  }
-                },
-                "constraint": {
-                  "horizontal": "left",
-                  "vertical": "top"
-                },
-                "name": "Element 2",
-                "placement": {
-                  "height": 50,
-                  "left": 20,
-                  "top": 20,
-                  "width": 50
-                },
-                "type": "icon"
-              },
-              {
-                "background": {
-                  "color": {
-                    "fixed": "transparent"
-                  }
-                },
-                "border": {
-                  "color": {
-                    "fixed": "dark-green"
-                  }
-                },
-                "config": {
-                  "align": "left",
-                  "color": {
-                    "fixed": "#ccccdc"
-                  },
-                  "size": 18,
-                  "text": {
-                    "fixed": "Variação percentual"
-                  },
-                  "valign": "top"
-                },
-                "constraint": {
-                  "horizontal": "left",
-                  "vertical": "top"
-                },
-                "name": "Element 3",
-                "placement": {
-                  "height": 25,
-                  "left": 90,
-                  "top": 20,
-                  "width": 244
-                },
-                "type": "text"
-              }
-            ],
-            "name": "Element 1722087966938",
-            "placement": {
-              "height": 100,
-              "left": 0,
-              "rotation": 0,
-              "top": 0,
-              "width": 100
-            },
-            "type": "frame"
-          },
-          "showAdvancedTypes": true
-        },
-        "pluginVersion": "11.1.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "grafana-postgresql-datasource",
-              "uid": "cdsd6ixjrqww0c"
-            },
-            "editorMode": "code",
-            "format": "table",
-            "rawQuery": true,
-            "rawSql": "SELECT\r\n  time AS \"time\",\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\n",
-            "refId": "A",
-            "sql": {
-              "columns": [
-                {
-                  "parameters": [],
-                  "type": "function"
-                }
-              ],
-              "groupBy": [
-                {
-                  "property": {
-                    "type": "string"
-                  },
-                  "type": "groupBy"
-                }
-              ],
-              "limit": 50
-            }
-          }
-        ],
-        "type": "canvas"
-      },
-      {
-        "datasource": {
-          "type": "grafana-postgresql-datasource",
-          "uid": "cdsd6ixjrqww0c"
-        },
-        "gridPos": {
-          "h": 10,
-          "w": 12,
-          "x": 12,
-          "y": 0
-        },
-        "id": 10,
-        "options": {
-          "code": {
-            "language": "plaintext",
-            "showLineNumbers": false,
-            "showMiniMap": false
-          },
-          "content": "\r\n<div style=\"width: 100%; height: 100%; background: #23282F; display: flex; align-itens: center; justify-content: center;\">\r\n  <img height=\"300px\" src=\"https://raw.githubusercontent.com/wrlxavier/imgs-dash/main/estufa.png\">\r\n</div>",
-          "mode": "html"
-        },
-        "pluginVersion": "11.1.0",
-        "transparent": true,
-        "type": "text"
-      },
-      {
-        "datasource": {
-          "type": "grafana-postgresql-datasource",
-          "uid": "cdsd6ixjrqww0c"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "fixedColor": "semi-dark-red",
-              "mode": "fixed"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "bars",
-              "fillOpacity": 100,
-              "gradientMode": "hue",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 7,
-          "w": 12,
-          "x": 0,
-          "y": 3
-        },
-        "id": 6,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "targets": [
-          {
-            "datasource": {
-              "type": "grafana-postgresql-datasource",
-              "uid": "cdsd6ixjrqww0c"
-            },
-            "editorMode": "code",
-            "format": "table",
-            "rawQuery": true,
-            "rawSql": "SELECT\r\n  time AS \"time\",\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\n",
-            "refId": "A",
-            "sql": {
-              "columns": [
-                {
-                  "parameters": [],
-                  "type": "function"
-                }
-              ],
-              "groupBy": [
-                {
-                  "property": {
-                    "type": "string"
-                  },
-                  "type": "groupBy"
-                }
-              ],
-              "limit": 50
-            }
-          }
-        ],
-        "title": "Temperatura ao longo do tempo",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "grafana-postgresql-datasource",
-          "uid": "cdsd6ixjrqww0c"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "humidity"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 3,
-          "w": 6,
-          "x": 0,
-          "y": 10
-        },
-        "id": 3,
-        "options": {
-          "infinitePan": false,
-          "inlineEditing": false,
-          "panZoom": false,
-          "root": {
-            "background": {
-              "color": {
-                "fixed": "transparent"
-              },
-              "image": {
-                "mode": "fixed"
-              }
-            },
-            "border": {
-              "color": {
-                "fixed": "dark-green"
-              }
-            },
-            "constraint": {
-              "horizontal": "left",
-              "vertical": "top"
-            },
-            "elements": [
-              {
-                "background": {
-                  "color": {
-                    "fixed": "#23282f"
-                  }
-                },
-                "border": {
-                  "color": {
-                    "fixed": "dark-green"
-                  }
-                },
-                "config": {
-                  "align": "center",
-                  "color": {
-                    "fixed": "#000000"
-                  },
-                  "valign": "middle"
-                },
-                "constraint": {
-                  "horizontal": "left",
-                  "vertical": "top"
-                },
-                "name": "Element 4",
-                "placement": {
-                  "height": 160,
-                  "left": 0,
-                  "top": 0,
-                  "width": 400
-                },
-                "type": "rectangle"
-              },
-              {
-                "background": {
-                  "color": {
-                    "fixed": "transparent"
-                  }
-                },
-                "border": {
-                  "color": {
-                    "fixed": "dark-green"
-                  }
-                },
-                "config": {
-                  "align": "left",
-                  "color": {
-                    "fixed": "#ffffff"
-                  },
-                  "size": 20,
-                  "text": {
-                    "field": "value",
-                    "fixed": "",
-                    "mode": "field"
-                  },
-                  "valign": "top"
-                },
-                "constraint": {
-                  "horizontal": "left",
-                  "vertical": "top"
-                },
-                "name": "Element 1",
-                "placement": {
-                  "height": 25,
-                  "left": 90,
-                  "top": 45,
-                  "width": 142
-                },
-                "type": "metric-value"
-              },
-              {
-                "background": {
-                  "color": {
-                    "fixed": "transparent"
-                  }
-                },
-                "border": {
-                  "color": {
-                    "fixed": "dark-green"
-                  }
-                },
-                "config": {
-                  "fill": {
-                    "fixed": "#D9D9D9"
-                  },
-                  "path": {
-                    "fixed": "<svg width=\"106\" height=\"106\" viewBox=\"0 0 106 106\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"> <g clip-path=\"url(#clip0_1_37)\"> <path d=\"M47.3838 94.0258C39.8987 94.0258 32.7202 91.0544 27.4275 85.7652C22.1347 80.476 19.1613 73.3023 19.1613 65.8223C10.2687 39.3525 47.3838 43.8746 47.3838 43.8746C47.3838 43.8746 76.9975 39.7135 76.9975 58.5158C76.9975 65.9959 72.6329 80.476 67.3401 85.7652C62.0474 91.0544 54.8688 94.0258 47.3838 94.0258Z\" fill=\"#6BA5E9\"/> <path d=\"M89.4375 0C88.559 0 87.7164 0.348995 87.0952 0.970209C86.474 1.59142 86.125 2.43397 86.125 3.3125C86.125 4.19103 86.474 5.03358 87.0952 5.65479C87.7164 6.27601 88.559 6.625 89.4375 6.625H99.375V24.8438H96.0625C95.184 24.8438 94.3414 25.1927 93.7202 25.814C93.099 26.4352 92.75 27.2777 92.75 28.1562C92.75 29.0348 93.099 29.8773 93.7202 30.4985C94.3414 31.1198 95.184 31.4688 96.0625 31.4688H99.375V49.6875H89.4375C88.559 49.6875 87.7164 50.0365 87.0952 50.6577C86.474 51.2789 86.125 52.1215 86.125 53C86.125 53.8785 86.474 54.7211 87.0952 55.3423C87.7164 55.9635 88.559 56.3125 89.4375 56.3125H99.375V74.5312H96.0625C95.184 74.5312 94.3414 74.8802 93.7202 75.5015C93.099 76.1227 92.75 76.9652 92.75 77.8438C92.75 78.7223 93.099 79.5648 93.7202 80.186C94.3414 80.8073 95.184 81.1562 96.0625 81.1562H99.375V99.375H89.4375C88.559 99.375 87.7164 99.724 87.0952 100.345C86.474 100.966 86.125 101.809 86.125 102.688C86.125 103.566 86.474 104.409 87.0952 105.03C87.7164 105.651 88.559 106 89.4375 106H102.688C103.566 106 104.409 105.651 105.03 105.03C105.651 104.409 106 103.566 106 102.688V3.3125C106 2.43397 105.651 1.59142 105.03 0.970209C104.409 0.348995 103.566 0 102.688 0L89.4375 0ZM46.375 9.9375L48.7865 7.66512C48.4768 7.33626 48.1031 7.07422 47.6884 6.89511C47.2737 6.716 46.8267 6.6236 46.375 6.6236C45.9233 6.6236 45.4763 6.716 45.0616 6.89511C44.6469 7.07422 44.2732 7.33626 43.9635 7.66512L43.9502 7.67838L43.9105 7.72475L43.7647 7.87713L43.2348 8.46012C40.3056 11.7112 37.4904 15.0633 34.7945 18.5102C29.6999 25.0226 23.4393 33.9134 18.9939 43.2016C15.688 50.1115 13.25 57.5182 13.25 64.4811C13.25 83.5677 27.9045 99.375 46.375 99.375C64.8455 99.375 79.5 83.5677 79.5 64.4811C79.5 57.5249 77.062 50.1115 73.7561 43.2016C69.3108 33.9134 63.0501 25.0226 57.9555 18.5102C55.0972 14.8567 52.1051 11.3099 48.9853 7.87713L48.8395 7.72475L48.7998 7.67838L48.7865 7.67175L46.375 9.9375ZM46.269 15.0123L46.375 14.8864L46.481 15.0123C48.071 16.8275 50.2705 19.4311 52.735 22.5913C56.7829 27.7654 61.48 34.3572 65.3291 41.3201H27.4275C31.27 34.3572 35.9737 27.7654 40.015 22.5913C42.4861 19.4311 44.6856 16.8275 46.269 15.0123ZM19.875 64.4811C19.875 59.4792 21.4915 53.8016 24.1018 47.9451H68.6483C71.2651 53.8016 72.875 59.4792 72.875 64.4811C72.875 80.2751 60.8307 92.75 46.375 92.75C31.9193 92.75 19.875 80.2751 19.875 64.4811Z\" fill=\"#55606E\"/> </g> <defs> <clipPath id=\"clip0_1_37\"> <rect width=\"106\" height=\"106\" fill=\"white\"/> </clipPath> </defs> </svg>",
-                    "mode": "fixed"
-                  }
-                },
-                "constraint": {
-                  "horizontal": "left",
-                  "vertical": "top"
-                },
-                "name": "Element 2",
-                "placement": {
-                  "height": 50,
-                  "left": 20,
-                  "top": 20,
-                  "width": 50
-                },
-                "type": "icon"
-              },
-              {
-                "background": {
-                  "color": {
-                    "fixed": "transparent"
-                  }
-                },
-                "border": {
-                  "color": {
-                    "fixed": "dark-green"
-                  }
-                },
-                "config": {
-                  "align": "left",
-                  "color": {
-                    "fixed": "rgb(204, 204, 220)"
-                  },
-                  "size": 18,
-                  "text": {
-                    "fixed": "Umidade relativa"
-                  },
-                  "valign": "top"
-                },
-                "constraint": {
-                  "horizontal": "left",
-                  "vertical": "top"
-                },
-                "name": "Element 3",
-                "placement": {
-                  "height": 25,
-                  "left": 90,
-                  "top": 20,
-                  "width": 244
-                },
-                "type": "text"
-              }
-            ],
-            "name": "Element 1722087966938",
-            "placement": {
-              "height": 100,
-              "left": 0,
-              "rotation": 0,
-              "top": 0,
-              "width": 100
-            },
-            "type": "frame"
-          },
-          "showAdvancedTypes": true
-        },
-        "pluginVersion": "11.1.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "grafana-postgresql-datasource",
-              "uid": "cdsd6ixjrqww0c"
-            },
-            "editorMode": "code",
-            "format": "table",
-            "rawQuery": true,
-            "rawSql": "SELECT\r\n  time AS \"time\",\r\n  value\r\nFROM\r\n  moisture\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\n",
-            "refId": "A",
-            "sql": {
-              "columns": [
-                {
-                  "parameters": [],
-                  "type": "function"
-                }
-              ],
-              "groupBy": [
-                {
-                  "property": {
-                    "type": "string"
-                  },
-                  "type": "groupBy"
-                }
-              ],
-              "limit": 50
-            }
-          }
-        ],
-        "type": "canvas"
-      },
-      {
-        "datasource": {
-          "type": "grafana-postgresql-datasource",
-          "uid": "cdsd6ixjrqww0c"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "percent"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 3,
-          "w": 6,
-          "x": 6,
-          "y": 10
-        },
-        "id": 8,
-        "options": {
-          "infinitePan": false,
-          "inlineEditing": false,
-          "panZoom": false,
-          "root": {
-            "background": {
-              "color": {
-                "fixed": "transparent"
-              },
-              "image": {
-                "mode": "fixed"
-              }
-            },
-            "border": {
-              "color": {
-                "fixed": "dark-green"
-              }
-            },
-            "constraint": {
-              "horizontal": "left",
-              "vertical": "top"
-            },
-            "elements": [
-              {
-                "background": {
-                  "color": {
-                    "fixed": "#23282f"
-                  }
-                },
-                "border": {
-                  "color": {
-                    "fixed": "dark-green"
-                  }
-                },
-                "config": {
-                  "align": "center",
-                  "color": {
-                    "fixed": "#000000"
-                  },
-                  "valign": "middle"
-                },
-                "constraint": {
-                  "horizontal": "left",
-                  "vertical": "top"
-                },
-                "name": "Element 4",
-                "placement": {
-                  "height": 160,
-                  "left": 0,
-                  "top": 0,
-                  "width": 400
-                },
-                "type": "rectangle"
-              },
-              {
-                "background": {
-                  "color": {
-                    "fixed": "transparent"
-                  }
-                },
-                "border": {
-                  "color": {
-                    "fixed": "dark-green"
-                  }
-                },
-                "config": {
-                  "align": "left",
-                  "color": {
-                    "fixed": "#ffffff"
-                  },
-                  "size": 20,
-                  "text": {
-                    "field": "value",
-                    "fixed": "",
-                    "mode": "field"
-                  },
-                  "valign": "top"
-                },
-                "constraint": {
-                  "horizontal": "left",
-                  "vertical": "top"
-                },
-                "name": "Element 1",
-                "placement": {
-                  "height": 25,
-                  "left": 90,
-                  "top": 45,
-                  "width": 142
-                },
-                "type": "metric-value"
-              },
-              {
-                "background": {
-                  "color": {
-                    "fixed": "transparent"
-                  }
-                },
-                "border": {
-                  "color": {
-                    "fixed": "dark-green"
-                  }
-                },
-                "config": {
-                  "fill": {
-                    "fixed": "#D9D9D9"
-                  },
-                  "path": {
-                    "fixed": "<svg width=\"800\" height=\"800\" viewBox=\"0 0 800 800\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M241.667 350C225.251 350 208.997 346.767 193.831 340.485C178.665 334.203 164.886 324.996 153.278 313.388C141.671 301.781 132.464 288.001 126.182 272.835C119.9 257.67 116.667 241.415 116.667 225C116.667 208.585 119.9 192.33 126.182 177.165C132.464 161.999 141.671 148.219 153.278 136.612C164.886 125.004 178.665 115.797 193.831 109.515C208.997 103.233 225.251 100 241.667 100C274.819 100 306.613 113.17 330.055 136.612C353.497 160.054 366.667 191.848 366.667 225C366.667 258.152 353.497 289.946 330.055 313.388C306.613 336.83 274.819 350 241.667 350ZM190.233 656.9C183.947 662.972 175.526 666.332 166.787 666.256C158.047 666.18 149.686 662.674 143.506 656.494C137.326 650.314 133.82 641.953 133.744 633.213C133.668 624.473 137.028 616.053 143.1 609.767L609.767 143.1C612.841 139.916 616.52 137.377 620.586 135.63C624.653 133.883 629.027 132.963 633.453 132.925C637.879 132.887 642.268 133.73 646.365 135.406C650.462 137.082 654.183 139.557 657.313 142.687C660.443 145.817 662.918 149.538 664.594 153.635C666.27 157.731 667.113 162.121 667.075 166.547C667.037 170.973 666.117 175.347 664.37 179.413C662.623 183.48 660.084 187.158 656.9 190.233L190.233 656.9ZM433.333 575C433.333 608.152 446.503 639.946 469.945 663.388C493.387 686.83 525.181 700 558.333 700C591.485 700 623.28 686.83 646.722 663.388C670.164 639.946 683.333 608.152 683.333 575C683.333 541.848 670.164 510.054 646.722 486.612C623.28 463.17 591.485 450 558.333 450C525.181 450 493.387 463.17 469.945 486.612C446.503 510.054 433.333 541.848 433.333 575ZM241.667 283.333C257.138 283.333 271.975 277.188 282.915 266.248C293.854 255.308 300 240.471 300 225C300 209.529 293.854 194.692 282.915 183.752C271.975 172.812 257.138 166.667 241.667 166.667C226.196 166.667 211.358 172.812 200.419 183.752C189.479 194.692 183.333 209.529 183.333 225C183.333 240.471 189.479 255.308 200.419 266.248C211.358 277.188 226.196 283.333 241.667 283.333ZM616.667 575C616.667 590.471 610.521 605.308 599.581 616.248C588.642 627.187 573.804 633.333 558.333 633.333C542.862 633.333 528.025 627.187 517.085 616.248C506.146 605.308 500 590.471 500 575C500 559.529 506.146 544.692 517.085 533.752C528.025 522.812 542.862 516.667 558.333 516.667C573.804 516.667 588.642 522.812 599.581 533.752C610.521 544.692 616.667 559.529 616.667 575Z\" fill=\"#6BA5E9\"/> </svg>",
-                    "mode": "fixed"
-                  }
-                },
-                "constraint": {
-                  "horizontal": "left",
-                  "vertical": "top"
-                },
-                "name": "Element 2",
-                "placement": {
-                  "height": 50,
-                  "left": 20,
-                  "top": 20,
-                  "width": 50
-                },
-                "type": "icon"
-              },
-              {
-                "background": {
-                  "color": {
-                    "fixed": "transparent"
-                  }
-                },
-                "border": {
-                  "color": {
-                    "fixed": "dark-green"
-                  }
-                },
-                "config": {
-                  "align": "left",
-                  "color": {
-                    "fixed": "rgb(204, 204, 220)"
-                  },
-                  "size": 18,
-                  "text": {
-                    "fixed": "Variação percentual"
-                  },
-                  "valign": "top"
-                },
-                "constraint": {
-                  "horizontal": "left",
-                  "vertical": "top"
-                },
-                "name": "Element 3",
-                "placement": {
-                  "height": 25,
-                  "left": 90,
-                  "top": 20,
-                  "width": 244
-                },
-                "type": "text"
-              }
-            ],
-            "name": "Element 1722087966938",
-            "placement": {
-              "height": 100,
-              "left": 0,
-              "rotation": 0,
-              "top": 0,
-              "width": 100
-            },
-            "type": "frame"
-          },
-          "showAdvancedTypes": true
-        },
-        "pluginVersion": "11.1.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "grafana-postgresql-datasource",
-              "uid": "cdsd6ixjrqww0c"
-            },
-            "editorMode": "code",
-            "format": "table",
-            "rawQuery": true,
-            "rawSql": "SELECT\r\n  time AS \"time\",\r\n  value\r\nFROM\r\n  moisture\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\n",
-            "refId": "A",
-            "sql": {
-              "columns": [
-                {
-                  "parameters": [],
-                  "type": "function"
-                }
-              ],
-              "groupBy": [
-                {
-                  "property": {
-                    "type": "string"
-                  },
-                  "type": "groupBy"
-                }
-              ],
-              "limit": 50
-            }
-          }
-        ],
-        "type": "canvas"
-      },
-      {
-        "datasource": {
-          "type": "grafana-postgresql-datasource",
-          "uid": "cdsd6ixjrqww0c"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "max": 100,
-            "min": -20,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": -20
-                },
-                {
-                  "color": "green",
-                  "value": 10
-                },
-                {
-                  "color": "red",
-                  "value": 40
-                }
-              ]
-            },
-            "unit": "celsius"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 3,
-          "w": 6,
-          "x": 12,
-          "y": 10
-        },
-        "id": 16,
-        "options": {
-          "displayMode": "lcd",
-          "maxVizHeight": 300,
-          "minVizHeight": 16,
-          "minVizWidth": 8,
-          "namePlacement": "auto",
-          "orientation": "horizontal",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showUnfilled": true,
-          "sizing": "manual",
-          "text": {
-            "valueSize": 20
-          },
-          "valueMode": "color"
-        },
-        "pluginVersion": "11.1.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "grafana-postgresql-datasource",
-              "uid": "cdsd6ixjrqww0c"
-            },
-            "editorMode": "code",
-            "format": "table",
-            "rawQuery": true,
-            "rawSql": "SELECT\r\n  time AS \"time\",\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\n",
-            "refId": "A",
-            "sql": {
-              "columns": [
-                {
-                  "parameters": [],
-                  "type": "function"
-                }
-              ],
-              "groupBy": [
-                {
-                  "property": {
-                    "type": "string"
-                  },
-                  "type": "groupBy"
-                }
-              ],
-              "limit": 50
-            }
-          }
-        ],
-        "title": "Qualidade Temperatua",
-        "type": "bargauge"
-      },
-      {
-        "datasource": {
-          "type": "grafana-postgresql-datasource",
-          "uid": "cdsd6ixjrqww0c"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 0
-                },
-                {
-                  "color": "green",
-                  "value": 20
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "humidity"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 3,
-          "w": 6,
-          "x": 18,
-          "y": 10
-        },
-        "id": 15,
-        "options": {
-          "displayMode": "lcd",
-          "maxVizHeight": 300,
-          "minVizHeight": 16,
-          "minVizWidth": 8,
-          "namePlacement": "auto",
-          "orientation": "horizontal",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showUnfilled": true,
-          "sizing": "manual",
-          "text": {
-            "valueSize": 20
-          },
-          "valueMode": "color"
-        },
-        "pluginVersion": "11.1.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "grafana-postgresql-datasource",
-              "uid": "cdsd6ixjrqww0c"
-            },
-            "editorMode": "code",
-            "format": "table",
-            "rawQuery": true,
-            "rawSql": "SELECT\r\n  --time AS \"time\",\r\n  value\r\nFROM\r\n  moisture\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\n",
-            "refId": "A",
-            "sql": {
-              "columns": [
-                {
-                  "parameters": [],
-                  "type": "function"
-                }
-              ],
-              "groupBy": [
-                {
-                  "property": {
-                    "type": "string"
-                  },
-                  "type": "groupBy"
-                }
-              ],
-              "limit": 50
-            }
-          }
-        ],
-        "title": "Qualidade Umidade Relativa",
-        "type": "bargauge"
-      },
-      {
-        "datasource": {
-          "type": "grafana-postgresql-datasource",
-          "uid": "cdsd6ixjrqww0c"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "fixedColor": "semi-dark-blue",
-              "mode": "fixed"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "bars",
-              "fillOpacity": 100,
-              "gradientMode": "hue",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 7,
-          "w": 12,
-          "x": 0,
-          "y": 13
-        },
-        "id": 9,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "targets": [
-          {
-            "datasource": {
-              "type": "grafana-postgresql-datasource",
-              "uid": "cdsd6ixjrqww0c"
-            },
-            "editorMode": "code",
-            "format": "table",
-            "rawQuery": true,
-            "rawSql": "SELECT\r\n  time AS \"time\",\r\n  value\r\nFROM\r\n  moisture\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\n",
-            "refId": "A",
-            "sql": {
-              "columns": [
-                {
-                  "parameters": [],
-                  "type": "function"
-                }
-              ],
-              "groupBy": [
-                {
-                  "property": {
-                    "type": "string"
-                  },
-                  "type": "groupBy"
-                }
-              ],
-              "limit": 50
-            }
-          }
-        ],
-        "title": "Umidade ao longo do tempo",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "grafana-postgresql-datasource",
-          "uid": "cdsd6ixjrqww0c"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "fixedColor": "dark-red",
-              "mode": "fixed"
-            },
-            "custom": {
-              "align": "auto",
-              "cellOptions": {
-                "applyToRow": true,
-                "mode": "gradient",
-                "type": "color-background"
-              },
-              "inspect": false
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 7,
-          "w": 12,
-          "x": 12,
-          "y": 13
-        },
-        "id": 12,
-        "options": {
-          "cellHeight": "sm",
-          "footer": {
-            "countRows": false,
-            "fields": "",
-            "reducer": [
-              "sum"
-            ],
-            "show": false
-          },
-          "showHeader": true
-        },
-        "pluginVersion": "11.1.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "grafana-postgresql-datasource",
-              "uid": "cdsd6ixjrqww0c"
-            },
-            "editorMode": "code",
-            "format": "table",
-            "rawQuery": true,
-            "rawSql": "SELECT\r\n  time AS \"time\",\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\nlimit 2",
-            "refId": "A",
-            "sql": {
-              "columns": [
-                {
-                  "parameters": [],
-                  "type": "function"
-                }
-              ],
-              "groupBy": [
-                {
-                  "property": {
-                    "type": "string"
-                  },
-                  "type": "groupBy"
-                }
-              ],
-              "limit": 50
-            }
-          }
-        ],
-        "title": "Alarmes acionados",
-        "type": "table"
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
       }
-    ],
-    "refresh": "1s",
-    "schemaVersion": 39,
-    "tags": [],
-    "templating": {
-      "list": []
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 13,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "cdsd6ixjrqww0c"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "id": 4,
+      "options": {
+        "infinitePan": false,
+        "inlineEditing": false,
+        "panZoom": false,
+        "root": {
+          "background": {
+            "color": {
+              "fixed": "dark-yellow"
+            },
+            "image": {
+              "mode": "fixed"
+            }
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            }
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "elements": [
+            {
+              "background": {
+                "color": {
+                  "fixed": "#23282f"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "center",
+                "color": {
+                  "fixed": "semi-dark-red"
+                },
+                "valign": "middle"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 4",
+              "placement": {
+                "height": 160,
+                "left": 0,
+                "top": 0,
+                "width": 400
+              },
+              "type": "rectangle"
+            },
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "left",
+                "color": {
+                  "fixed": "#ffffff"
+                },
+                "size": 20,
+                "text": {
+                  "field": "value",
+                  "fixed": "",
+                  "mode": "field"
+                },
+                "valign": "top"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 1",
+              "placement": {
+                "height": 25,
+                "left": 90,
+                "top": 45,
+                "width": 142
+              },
+              "type": "metric-value"
+            },
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "fill": {
+                  "fixed": "#D9D9D9"
+                },
+                "path": {
+                  "fixed": "<svg width=\"106\" height=\"106\" viewBox=\"0 0 106 106\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"> <path d=\"M58.2005 73.1552V8.74105C58.2005 3.92137 54.2793 0 49.4594 0C44.6393 0 40.7184 3.92137 40.7184 8.74105V73.1552C35.2546 76.2799 31.8893 82.008 31.8666 88.343C31.8504 92.8891 33.6224 97.237 36.8554 100.585C40.09 103.935 44.3737 105.855 48.917 105.992C49.1004 105.997 49.2828 106 49.4654 106C54.0671 106 58.3967 104.248 61.7096 101.034C65.1551 97.6906 67.0523 93.2063 67.0523 88.4067C67.0521 82.0445 63.6866 76.2919 58.2005 73.1552ZM59.3981 98.6514C56.6041 101.363 52.9148 102.793 49.0172 102.673C45.3443 102.563 41.8732 101.002 39.2433 98.279C36.6138 95.5561 35.1728 92.0316 35.1861 88.3546C35.2053 82.9343 38.2446 78.0604 43.1174 75.635C43.6814 75.3545 44.0375 74.7787 44.0375 74.1491V8.74105C44.0375 5.75152 46.4697 3.31933 49.4592 3.31933C52.4487 3.31933 54.8809 5.75152 54.8809 8.74105V74.1493C54.8809 74.7791 55.2372 75.3545 55.801 75.6352C60.6935 78.0703 63.7325 82.9641 63.7325 88.4067C63.7328 92.3008 62.1935 95.9391 59.3981 98.6514Z\" fill=\"#55606E\"/> <path d=\"M51.1191 78.0276V19.3632C51.1191 18.4467 50.3761 17.7034 49.4593 17.7034C48.5428 17.7034 47.7996 18.4464 47.7996 19.3632V78.0276C42.7894 78.8257 38.9478 83.1757 38.9478 88.4067C38.9478 94.2025 43.6633 98.9181 49.4591 98.9181C55.255 98.9181 59.9705 94.2025 59.9705 88.4067C59.9709 83.1757 56.1292 78.8257 51.1191 78.0276ZM49.4595 95.5988C45.4939 95.5988 42.2675 92.3724 42.2675 88.4067C42.2675 84.441 45.4939 81.2147 49.4595 81.2147C53.4252 81.2147 56.6516 84.441 56.6516 88.4067C56.6516 92.3724 53.4252 95.5988 49.4595 95.5988Z\" fill=\"#FF0000\"/> <path d=\"M72.4737 53.1104H63.6219C62.7054 53.1104 61.9622 53.8535 61.9622 54.7702C61.9622 55.6869 62.7052 56.43 63.6219 56.43H72.4737C73.3903 56.43 74.1335 55.6869 74.1335 54.7702C74.1335 53.8535 73.3907 53.1104 72.4737 53.1104Z\" fill=\"#55606E\"/> <path d=\"M68.9331 44.2586H63.6222C62.7056 44.2586 61.9624 45.0017 61.9624 45.9184C61.9624 46.8349 62.7054 47.5782 63.6222 47.5782H68.9331C69.8497 47.5782 70.5929 46.8351 70.5929 45.9184C70.5929 45.0019 69.8497 44.2586 68.9331 44.2586Z\" fill=\"#55606E\"/> <path d=\"M72.4737 35.407H63.6219C62.7054 35.407 61.9622 36.1501 61.9622 37.0668C61.9622 37.9833 62.7052 38.7266 63.6219 38.7266H72.4737C73.3903 38.7266 74.1335 37.9835 74.1335 37.0668C74.1335 36.1501 73.3907 35.407 72.4737 35.407Z\" fill=\"#55606E\"/> <path d=\"M68.9331 26.5552H63.6222C62.7056 26.5552 61.9624 27.2983 61.9624 28.215C61.9624 29.1315 62.7054 29.8748 63.6222 29.8748H68.9331C69.8497 29.8748 70.5929 29.1317 70.5929 28.215C70.5929 27.2983 69.8497 26.5552 68.9331 26.5552Z\" fill=\"#55606E\"/> <path d=\"M72.4737 17.7034H63.6219C62.7054 17.7034 61.9622 18.4464 61.9622 19.3632C61.9622 20.2797 62.7052 21.0229 63.6219 21.0229H72.4737C73.3903 21.0229 74.1335 20.2799 74.1335 19.3632C74.1335 18.4467 73.3905 17.7034 72.4737 17.7034Z\" fill=\"#55606E\"/> </svg>",
+                  "mode": "fixed"
+                }
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 2",
+              "placement": {
+                "height": 50,
+                "left": 20,
+                "top": 20,
+                "width": 50
+              },
+              "type": "icon"
+            },
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "left",
+                "color": {
+                  "fixed": "#ccccdc"
+                },
+                "size": 18,
+                "text": {
+                  "fixed": "Temperatura"
+                },
+                "valign": "top"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 3",
+              "placement": {
+                "height": 25,
+                "left": 90,
+                "top": 20,
+                "width": 244
+              },
+              "type": "text"
+            }
+          ],
+          "name": "Element 1722087966938",
+          "placement": {
+            "height": 100,
+            "left": 0,
+            "rotation": 0,
+            "top": 0,
+            "width": 100
+          },
+          "type": "frame"
+        },
+        "showAdvancedTypes": true
+      },
+      "pluginVersion": "11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "cdsd6ixjrqww0c"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT\r\n  time AS \"time\",\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "type": "canvas"
     },
-    "time": {
-      "from": "now-1m",
-      "to": "now"
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "cdsd6ixjrqww0c"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 6,
+        "y": 0
+      },
+      "id": 7,
+      "options": {
+        "infinitePan": false,
+        "inlineEditing": false,
+        "panZoom": false,
+        "root": {
+          "background": {
+            "color": {
+              "fixed": "transparent"
+            },
+            "image": {
+              "mode": "fixed"
+            }
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            }
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "elements": [
+            {
+              "background": {
+                "color": {
+                  "fixed": "#23282f"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "center",
+                "color": {
+                  "fixed": "#000000"
+                },
+                "valign": "middle"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 4",
+              "placement": {
+                "height": 160,
+                "left": 0,
+                "top": 0,
+                "width": 400
+              },
+              "type": "rectangle"
+            },
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "left",
+                "color": {
+                  "fixed": "#ffffff"
+                },
+                "size": 20,
+                "text": {
+                  "field": "percentage_variation",
+                  "fixed": "",
+                  "mode": "field"
+                },
+                "valign": "top"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 1",
+              "placement": {
+                "height": 25,
+                "left": 90,
+                "top": 45,
+                "width": 142
+              },
+              "type": "metric-value"
+            },
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "fill": {
+                  "fixed": "#D9D9D9"
+                },
+                "path": {
+                  "fixed": "<svg width=\"800\" height=\"800\" viewBox=\"0 0 800 800\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M241.667 350C225.252 350 208.997 346.767 193.831 340.485C178.666 334.203 164.886 324.996 153.278 313.388C141.671 301.781 132.464 288.001 126.182 272.835C119.9 257.67 116.667 241.415 116.667 225C116.667 208.585 119.9 192.33 126.182 177.165C132.464 161.999 141.671 148.219 153.278 136.612C164.886 125.004 178.666 115.797 193.831 109.515C208.997 103.233 225.252 100 241.667 100C274.819 100 306.613 113.17 330.055 136.612C353.497 160.054 366.667 191.848 366.667 225C366.667 258.152 353.497 289.946 330.055 313.388C306.613 336.83 274.819 350 241.667 350ZM190.233 656.9C183.947 662.972 175.527 666.332 166.787 666.256C158.047 666.18 149.686 662.674 143.506 656.494C137.326 650.314 133.82 641.953 133.744 633.213C133.668 624.473 137.028 616.053 143.1 609.767L609.767 143.1C612.842 139.916 616.52 137.377 620.587 135.63C624.653 133.883 629.027 132.963 633.453 132.925C637.879 132.887 642.269 133.73 646.365 135.406C650.462 137.082 654.183 139.557 657.313 142.687C660.443 145.817 662.918 149.538 664.594 153.635C666.27 157.731 667.114 162.121 667.075 166.547C667.037 170.973 666.117 175.347 664.37 179.413C662.623 183.48 660.084 187.158 656.9 190.233L190.233 656.9ZM433.333 575C433.333 608.152 446.503 639.946 469.945 663.388C493.387 686.83 525.181 700 558.333 700C591.485 700 623.28 686.83 646.722 663.388C670.164 639.946 683.333 608.152 683.333 575C683.333 541.848 670.164 510.054 646.722 486.612C623.28 463.17 591.485 450 558.333 450C525.181 450 493.387 463.17 469.945 486.612C446.503 510.054 433.333 541.848 433.333 575ZM241.667 283.333C257.138 283.333 271.975 277.188 282.915 266.248C293.854 255.308 300 240.471 300 225C300 209.529 293.854 194.692 282.915 183.752C271.975 172.812 257.138 166.667 241.667 166.667C226.196 166.667 211.358 172.812 200.419 183.752C189.479 194.692 183.333 209.529 183.333 225C183.333 240.471 189.479 255.308 200.419 266.248C211.358 277.188 226.196 283.333 241.667 283.333ZM616.667 575C616.667 590.471 610.521 605.308 599.581 616.248C588.642 627.187 573.804 633.333 558.333 633.333C542.862 633.333 528.025 627.187 517.085 616.248C506.146 605.308 500 590.471 500 575C500 559.529 506.146 544.692 517.085 533.752C528.025 522.812 542.862 516.667 558.333 516.667C573.804 516.667 588.642 522.812 599.581 533.752C610.521 544.692 616.667 559.529 616.667 575Z\" fill=\"#AD2222\"/> </svg>",
+                  "mode": "fixed"
+                }
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 2",
+              "placement": {
+                "height": 50,
+                "left": 20,
+                "top": 20,
+                "width": 50
+              },
+              "type": "icon"
+            },
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "left",
+                "color": {
+                  "fixed": "#ccccdc"
+                },
+                "size": 18,
+                "text": {
+                  "fixed": "Variação percentual"
+                },
+                "valign": "top"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 3",
+              "placement": {
+                "height": 25,
+                "left": 90,
+                "top": 20,
+                "width": 244
+              },
+              "type": "text"
+            }
+          ],
+          "name": "Element 1722087966938",
+          "placement": {
+            "height": 100,
+            "left": 0,
+            "rotation": 0,
+            "top": 0,
+            "width": 100
+          },
+          "type": "frame"
+        },
+        "showAdvancedTypes": true
+      },
+      "pluginVersion": "11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "cdsd6ixjrqww0c"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "WITH RankedTemperatures AS (\r\n  SELECT\r\n    time,\r\n    upi_id,\r\n    value,\r\n    ROW_NUMBER() OVER (\r\n      ORDER BY\r\n        time DESC\r\n    ) AS rn\r\n  FROM\r\n    temperature\r\n  WHERE\r\n    $__timeFilter(time)\r\n  AND \r\n    upi_id = $upi \r\n),\r\nLastValues AS (\r\n  SELECT\r\n    MAX(\r\n      CASE\r\n        WHEN rn = 1 THEN value\r\n      END\r\n    ) AS last_value,\r\n    MAX(\r\n      CASE\r\n        WHEN rn = 2 THEN value\r\n      END\r\n    ) AS second_last_value\r\n  FROM\r\n    RankedTemperatures\r\n)\r\nSELECT\r\n  last_value,\r\n  second_last_value,\r\n  CASE\r\n    WHEN second_last_value IS NULL\r\n    OR second_last_value = 0 THEN NULL\r\n    ELSE (\r\n      (last_value - second_last_value) / second_last_value\r\n    ) * 100\r\n  END AS percentage_variation\r\nFROM\r\n  LastValues;",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "type": "canvas"
     },
-    "timepicker": {
-      "refresh_intervals": [
-        "1s",
-        "5s",
-        "10s",
-        "30s",
-        "1m",
-        "5m",
-        "15m",
-        "30m",
-        "1h",
-        "2h",
-        "1d"
-      ]
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "cdsd6ixjrqww0c"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 10,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "\r\n<div style=\"width: 100%; height: 100%; background: #23282F; display: flex; align-items: center; justify-content: center; flex-direction: column\">\r\n  <img height=\"300px\" src=\"https://raw.githubusercontent.com/wrlxavier/imgs-dash/main/estufa.png\">\r\n  <h2>Unidade de Produção Independente ${upi}</h2>\r\n</div>",
+        "mode": "html"
+      },
+      "pluginVersion": "11.1.0",
+      "transparent": true,
+      "type": "text"
     },
-    "timezone": "browser",
-    "title": "UPI 1 - Unidade de Produção Independente",
-    "uid": "adt0snywrn474d",
-    "version": 21,
-    "weekStart": ""
-  }
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "cdsd6ixjrqww0c"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "semi-dark-red",
+            "mode": "fixed"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "bars",
+            "fillOpacity": 100,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 3
+      },
+      "id": 6,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "cdsd6ixjrqww0c"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT\r\n  time AS \"time\",\r\n  upi_id,\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time)\r\nAND\r\n  upi_id = $upi \r\nORDER BY\r\n  time ASC\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Temperatura ao longo do tempo",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "cdsd6ixjrqww0c"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "humidity"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 0,
+        "y": 10
+      },
+      "id": 3,
+      "options": {
+        "infinitePan": false,
+        "inlineEditing": false,
+        "panZoom": false,
+        "root": {
+          "background": {
+            "color": {
+              "fixed": "transparent"
+            },
+            "image": {
+              "mode": "fixed"
+            }
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            }
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "elements": [
+            {
+              "background": {
+                "color": {
+                  "fixed": "#23282f"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "center",
+                "color": {
+                  "fixed": "#000000"
+                },
+                "valign": "middle"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 4",
+              "placement": {
+                "height": 160,
+                "left": 0,
+                "top": 0,
+                "width": 400
+              },
+              "type": "rectangle"
+            },
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "left",
+                "color": {
+                  "fixed": "#ffffff"
+                },
+                "size": 20,
+                "text": {
+                  "field": "value",
+                  "fixed": "",
+                  "mode": "field"
+                },
+                "valign": "top"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 1",
+              "placement": {
+                "height": 25,
+                "left": 90,
+                "top": 45,
+                "width": 142
+              },
+              "type": "metric-value"
+            },
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "fill": {
+                  "fixed": "#D9D9D9"
+                },
+                "path": {
+                  "fixed": "<svg width=\"106\" height=\"106\" viewBox=\"0 0 106 106\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"> <g clip-path=\"url(#clip0_1_37)\"> <path d=\"M47.3838 94.0258C39.8987 94.0258 32.7202 91.0544 27.4275 85.7652C22.1347 80.476 19.1613 73.3023 19.1613 65.8223C10.2687 39.3525 47.3838 43.8746 47.3838 43.8746C47.3838 43.8746 76.9975 39.7135 76.9975 58.5158C76.9975 65.9959 72.6329 80.476 67.3401 85.7652C62.0474 91.0544 54.8688 94.0258 47.3838 94.0258Z\" fill=\"#6BA5E9\"/> <path d=\"M89.4375 0C88.559 0 87.7164 0.348995 87.0952 0.970209C86.474 1.59142 86.125 2.43397 86.125 3.3125C86.125 4.19103 86.474 5.03358 87.0952 5.65479C87.7164 6.27601 88.559 6.625 89.4375 6.625H99.375V24.8438H96.0625C95.184 24.8438 94.3414 25.1927 93.7202 25.814C93.099 26.4352 92.75 27.2777 92.75 28.1562C92.75 29.0348 93.099 29.8773 93.7202 30.4985C94.3414 31.1198 95.184 31.4688 96.0625 31.4688H99.375V49.6875H89.4375C88.559 49.6875 87.7164 50.0365 87.0952 50.6577C86.474 51.2789 86.125 52.1215 86.125 53C86.125 53.8785 86.474 54.7211 87.0952 55.3423C87.7164 55.9635 88.559 56.3125 89.4375 56.3125H99.375V74.5312H96.0625C95.184 74.5312 94.3414 74.8802 93.7202 75.5015C93.099 76.1227 92.75 76.9652 92.75 77.8438C92.75 78.7223 93.099 79.5648 93.7202 80.186C94.3414 80.8073 95.184 81.1562 96.0625 81.1562H99.375V99.375H89.4375C88.559 99.375 87.7164 99.724 87.0952 100.345C86.474 100.966 86.125 101.809 86.125 102.688C86.125 103.566 86.474 104.409 87.0952 105.03C87.7164 105.651 88.559 106 89.4375 106H102.688C103.566 106 104.409 105.651 105.03 105.03C105.651 104.409 106 103.566 106 102.688V3.3125C106 2.43397 105.651 1.59142 105.03 0.970209C104.409 0.348995 103.566 0 102.688 0L89.4375 0ZM46.375 9.9375L48.7865 7.66512C48.4768 7.33626 48.1031 7.07422 47.6884 6.89511C47.2737 6.716 46.8267 6.6236 46.375 6.6236C45.9233 6.6236 45.4763 6.716 45.0616 6.89511C44.6469 7.07422 44.2732 7.33626 43.9635 7.66512L43.9502 7.67838L43.9105 7.72475L43.7647 7.87713L43.2348 8.46012C40.3056 11.7112 37.4904 15.0633 34.7945 18.5102C29.6999 25.0226 23.4393 33.9134 18.9939 43.2016C15.688 50.1115 13.25 57.5182 13.25 64.4811C13.25 83.5677 27.9045 99.375 46.375 99.375C64.8455 99.375 79.5 83.5677 79.5 64.4811C79.5 57.5249 77.062 50.1115 73.7561 43.2016C69.3108 33.9134 63.0501 25.0226 57.9555 18.5102C55.0972 14.8567 52.1051 11.3099 48.9853 7.87713L48.8395 7.72475L48.7998 7.67838L48.7865 7.67175L46.375 9.9375ZM46.269 15.0123L46.375 14.8864L46.481 15.0123C48.071 16.8275 50.2705 19.4311 52.735 22.5913C56.7829 27.7654 61.48 34.3572 65.3291 41.3201H27.4275C31.27 34.3572 35.9737 27.7654 40.015 22.5913C42.4861 19.4311 44.6856 16.8275 46.269 15.0123ZM19.875 64.4811C19.875 59.4792 21.4915 53.8016 24.1018 47.9451H68.6483C71.2651 53.8016 72.875 59.4792 72.875 64.4811C72.875 80.2751 60.8307 92.75 46.375 92.75C31.9193 92.75 19.875 80.2751 19.875 64.4811Z\" fill=\"#55606E\"/> </g> <defs> <clipPath id=\"clip0_1_37\"> <rect width=\"106\" height=\"106\" fill=\"white\"/> </clipPath> </defs> </svg>",
+                  "mode": "fixed"
+                }
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 2",
+              "placement": {
+                "height": 50,
+                "left": 20,
+                "top": 20,
+                "width": 50
+              },
+              "type": "icon"
+            },
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "left",
+                "color": {
+                  "fixed": "rgb(204, 204, 220)"
+                },
+                "size": 18,
+                "text": {
+                  "fixed": "Umidade relativa"
+                },
+                "valign": "top"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 3",
+              "placement": {
+                "height": 25,
+                "left": 90,
+                "top": 20,
+                "width": 244
+              },
+              "type": "text"
+            }
+          ],
+          "name": "Element 1722087966938",
+          "placement": {
+            "height": 100,
+            "left": 0,
+            "rotation": 0,
+            "top": 0,
+            "width": 100
+          },
+          "type": "frame"
+        },
+        "showAdvancedTypes": true
+      },
+      "pluginVersion": "11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "cdsd6ixjrqww0c"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT\r\n  time AS \"time\",\r\n  value\r\nFROM\r\n  moisture\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "type": "canvas"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "cdsd6ixjrqww0c"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 6,
+        "y": 10
+      },
+      "id": 8,
+      "options": {
+        "infinitePan": false,
+        "inlineEditing": false,
+        "panZoom": false,
+        "root": {
+          "background": {
+            "color": {
+              "fixed": "transparent"
+            },
+            "image": {
+              "mode": "fixed"
+            }
+          },
+          "border": {
+            "color": {
+              "fixed": "dark-green"
+            }
+          },
+          "constraint": {
+            "horizontal": "left",
+            "vertical": "top"
+          },
+          "elements": [
+            {
+              "background": {
+                "color": {
+                  "fixed": "#23282f"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "center",
+                "color": {
+                  "fixed": "#000000"
+                },
+                "valign": "middle"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 4",
+              "placement": {
+                "height": 160,
+                "left": 0,
+                "top": 0,
+                "width": 400
+              },
+              "type": "rectangle"
+            },
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "left",
+                "color": {
+                  "fixed": "#ffffff"
+                },
+                "size": 20,
+                "text": {
+                  "field": "percentage_variation",
+                  "fixed": "",
+                  "mode": "field"
+                },
+                "valign": "top"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 1",
+              "placement": {
+                "height": 25,
+                "left": 90,
+                "top": 45,
+                "width": 142
+              },
+              "type": "metric-value"
+            },
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "fill": {
+                  "fixed": "#D9D9D9"
+                },
+                "path": {
+                  "fixed": "<svg width=\"800\" height=\"800\" viewBox=\"0 0 800 800\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M241.667 350C225.251 350 208.997 346.767 193.831 340.485C178.665 334.203 164.886 324.996 153.278 313.388C141.671 301.781 132.464 288.001 126.182 272.835C119.9 257.67 116.667 241.415 116.667 225C116.667 208.585 119.9 192.33 126.182 177.165C132.464 161.999 141.671 148.219 153.278 136.612C164.886 125.004 178.665 115.797 193.831 109.515C208.997 103.233 225.251 100 241.667 100C274.819 100 306.613 113.17 330.055 136.612C353.497 160.054 366.667 191.848 366.667 225C366.667 258.152 353.497 289.946 330.055 313.388C306.613 336.83 274.819 350 241.667 350ZM190.233 656.9C183.947 662.972 175.526 666.332 166.787 666.256C158.047 666.18 149.686 662.674 143.506 656.494C137.326 650.314 133.82 641.953 133.744 633.213C133.668 624.473 137.028 616.053 143.1 609.767L609.767 143.1C612.841 139.916 616.52 137.377 620.586 135.63C624.653 133.883 629.027 132.963 633.453 132.925C637.879 132.887 642.268 133.73 646.365 135.406C650.462 137.082 654.183 139.557 657.313 142.687C660.443 145.817 662.918 149.538 664.594 153.635C666.27 157.731 667.113 162.121 667.075 166.547C667.037 170.973 666.117 175.347 664.37 179.413C662.623 183.48 660.084 187.158 656.9 190.233L190.233 656.9ZM433.333 575C433.333 608.152 446.503 639.946 469.945 663.388C493.387 686.83 525.181 700 558.333 700C591.485 700 623.28 686.83 646.722 663.388C670.164 639.946 683.333 608.152 683.333 575C683.333 541.848 670.164 510.054 646.722 486.612C623.28 463.17 591.485 450 558.333 450C525.181 450 493.387 463.17 469.945 486.612C446.503 510.054 433.333 541.848 433.333 575ZM241.667 283.333C257.138 283.333 271.975 277.188 282.915 266.248C293.854 255.308 300 240.471 300 225C300 209.529 293.854 194.692 282.915 183.752C271.975 172.812 257.138 166.667 241.667 166.667C226.196 166.667 211.358 172.812 200.419 183.752C189.479 194.692 183.333 209.529 183.333 225C183.333 240.471 189.479 255.308 200.419 266.248C211.358 277.188 226.196 283.333 241.667 283.333ZM616.667 575C616.667 590.471 610.521 605.308 599.581 616.248C588.642 627.187 573.804 633.333 558.333 633.333C542.862 633.333 528.025 627.187 517.085 616.248C506.146 605.308 500 590.471 500 575C500 559.529 506.146 544.692 517.085 533.752C528.025 522.812 542.862 516.667 558.333 516.667C573.804 516.667 588.642 522.812 599.581 533.752C610.521 544.692 616.667 559.529 616.667 575Z\" fill=\"#6BA5E9\"/> </svg>",
+                  "mode": "fixed"
+                }
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 2",
+              "placement": {
+                "height": 50,
+                "left": 20,
+                "top": 20,
+                "width": 50
+              },
+              "type": "icon"
+            },
+            {
+              "background": {
+                "color": {
+                  "fixed": "transparent"
+                }
+              },
+              "border": {
+                "color": {
+                  "fixed": "dark-green"
+                }
+              },
+              "config": {
+                "align": "left",
+                "color": {
+                  "fixed": "rgb(204, 204, 220)"
+                },
+                "size": 18,
+                "text": {
+                  "fixed": "Variação percentual"
+                },
+                "valign": "top"
+              },
+              "constraint": {
+                "horizontal": "left",
+                "vertical": "top"
+              },
+              "name": "Element 3",
+              "placement": {
+                "height": 25,
+                "left": 90,
+                "top": 20,
+                "width": 244
+              },
+              "type": "text"
+            }
+          ],
+          "name": "Element 1722087966938",
+          "placement": {
+            "height": 100,
+            "left": 0,
+            "rotation": 0,
+            "top": 0,
+            "width": 100
+          },
+          "type": "frame"
+        },
+        "showAdvancedTypes": true
+      },
+      "pluginVersion": "11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "cdsd6ixjrqww0c"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "WITH RankedMoistures AS (\r\n  SELECT\r\n    time,\r\n    upi_id,\r\n    value,\r\n    ROW_NUMBER() OVER (ORDER BY time DESC) AS rn\r\n  FROM\r\n    moisture\r\n  WHERE\r\n    $__timeFilter(time)\r\n  AND \r\n    upi_id = $upi \r\n)\r\n, LastValues AS (\r\n  SELECT\r\n    MAX(CASE WHEN rn = 1 THEN value END) AS last_value,\r\n    MAX(CASE WHEN rn = 2 THEN value END) AS second_last_value\r\n  FROM\r\n    RankedMoistures\r\n)\r\nSELECT\r\n  last_value,\r\n  second_last_value,\r\n  CASE\r\n    WHEN second_last_value IS NULL OR second_last_value = 0 THEN NULL\r\n    ELSE ((last_value - second_last_value) / second_last_value) * 100\r\n  END AS percentage_variation\r\nFROM\r\n  LastValues;\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "type": "canvas"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "cdsd6ixjrqww0c"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 100,
+          "min": -20,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": -20
+              },
+              {
+                "color": "green",
+                "value": 10
+              },
+              {
+                "color": "red",
+                "value": 40
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 12,
+        "y": 10
+      },
+      "id": 16,
+      "options": {
+        "displayMode": "lcd",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "manual",
+        "text": {
+          "valueSize": 20
+        },
+        "valueMode": "color"
+      },
+      "pluginVersion": "11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "cdsd6ixjrqww0c"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT\r\n  time AS \"time\",\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Qualidade Temperatua",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "cdsd6ixjrqww0c"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "green",
+                "value": 20
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "humidity"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 18,
+        "y": 10
+      },
+      "id": 15,
+      "options": {
+        "displayMode": "lcd",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "manual",
+        "text": {
+          "valueSize": 20
+        },
+        "valueMode": "color"
+      },
+      "pluginVersion": "11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "cdsd6ixjrqww0c"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT\r\n  --time AS \"time\",\r\n  value\r\nFROM\r\n  moisture\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Qualidade Umidade Relativa",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "cdsd6ixjrqww0c"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "semi-dark-blue",
+            "mode": "fixed"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "bars",
+            "fillOpacity": 100,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 13
+      },
+      "id": 9,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "cdsd6ixjrqww0c"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT\r\n  time AS \"time\",\r\n  upi_id,\r\n  value\r\nFROM\r\n  moisture\r\nWHERE\r\n  $__timeFilter(time)\r\nAND\r\n  upi_id = $upi \r\nORDER BY\r\n  time ASC\r\n",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Umidade ao longo do tempo",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "cdsd6ixjrqww0c"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "dark-red",
+            "mode": "fixed"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "applyToRow": true,
+              "mode": "gradient",
+              "type": "color-background"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 13
+      },
+      "id": 12,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "cdsd6ixjrqww0c"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT\r\n  time AS \"time\",\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\nlimit 2",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Alarmes acionados",
+      "type": "table"
+    }
+  ],
+  "refresh": "1s",
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": true,
+          "text": "2",
+          "value": "2"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "UPI",
+        "multi": false,
+        "name": "upi",
+        "options": [
+          {
+            "selected": false,
+            "text": "1",
+            "value": "1"
+          },
+          {
+            "selected": true,
+            "text": "2",
+            "value": "2"
+          }
+        ],
+        "query": "1, 2",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-1m",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "1s",
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "browser",
+  "title": "UPI 1 - Unidade de Produção Independente",
+  "uid": "adt0snywrn474d",
+  "version": 24,
+  "weekStart": ""
+}

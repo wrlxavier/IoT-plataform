@@ -1,47 +1,73 @@
 import paho.mqtt.client as mqtt
-from src.postgres_db import PostgresDatabase
-
-
+import threading
+import queue
+import json  # Importa o módulo JSON para processar as mensagens
 
 class MQTTSubscriber:
 
-    def __init__(self, postgres_db: PostgresDatabase):
-
+    def __init__(self, broker_config, db):
+        self.broker = broker_config['broker']
+        self.port = broker_config['port']
+        self.user = broker_config['user']
+        self.password = broker_config['password']
+        self.db = db
         self.client = mqtt.Client()
-        self.postgres_db = postgres_db
 
-        self.broker_config = {
-            "broker": 'www.maqiatto.com',
-            "port": 1883,
-            "user": "lucasl050503@gmail.com",
-            "password": '123456'
-        }
-
+        self.client.username_pw_set(self.user, self.password)
         self.client.on_connect = self.on_connect
         self.client.on_message = self.on_message
 
+        self.queue = queue.Queue()
+        self.worker_thread = threading.Thread(target=self.process_queue)
+        self.worker_thread.start()
+
+    def connect(self):
+        self.client.connect(self.broker, self.port, 60)
+        self.client.loop_forever()
+
     def on_connect(self, client, userdata, flags, rc):
-        print("Conectado com sucesso. Código de resultado:", rc)
+        print(f"Connected with result code {rc}")
         client.subscribe("lucasl050503@gmail.com/UPI1/moisture")
         client.subscribe("lucasl050503@gmail.com/UPI1/temperature")
 
-
     def on_message(self, client, userdata, msg):
-        print(f"Recebido mensagem em {msg.topic}: {msg.payload.decode()}")
-        if msg.topic == "lucasl050503@gmail.com/UPI1/moisture":
-            self.postgres_db.insert_moisture(msg.payload.decode())
-            #insert_data("moisture", msg.payload.decode())
-        elif msg.topic == "lucasl050503@gmail.com/UPI1/temperature":
-            self.postgres_db.insert_temperature(msg.payload.decode())
-            #insert_data("temperature", msg.payload.decode())
-
-
-    def run(self):
-
-        self.client.username_pw_set(self.broker_config['user'], 
-                                    self.broker_config['password'])
-
-        self.client.connect(self.broker_config['broker'], 
-                            self.broker_config['port'], 60)
+        topic = msg.topic
+        payload = msg.payload.decode('utf-8')
+        print(f"Received message on topic {topic}: {payload}")
         
-        self.client.loop_forever()
+        # Enfileira a mensagem para processamento posterior
+        self.queue.put((topic, payload))
+
+    def process_queue(self):
+        while True:
+            topic, payload = self.queue.get()
+            try:
+                # Decodifica o JSON da carga útil
+                message = json.loads(payload)
+                timestamp = message.get("timestamp")
+                value = message.get("value")
+
+                if timestamp and value is not None:
+
+                    # Adiciona o timestamp e valor às funções de inserção do banco de dados
+                    if topic == "lucasl050503@gmail.com/UPI1/moisture":
+                        self.db.insert_moisture(timestamp, 1, value)
+                        self.db.insert_moisture(timestamp, 2, 0.1*value)
+                    elif topic == "lucasl050503@gmail.com/UPI1/temperature":
+                        self.db.insert_temperature(timestamp, 1, value)
+                        self.db.insert_temperature(timestamp, 2, 0.1*value)
+                    #elif topic == "lucasl050503@gmail.com/UPI2/moisture":
+                    #    self.db.insert_moisture(timestamp, 2, value)
+                    #elif topic == "lucasl050503@gmail.com/UPI2/temperature":
+                    #    self.db.insert_temperature(timestamp, 2, value)
+                    
+                else:
+                    print(f"Mensagem inválida: {payload}")
+            except json.JSONDecodeError as e:
+                print(f"Erro ao decodificar JSON: {e}")
+            except ValueError as e:
+                print(f"Erro ao processar valor: {e}")
+            except Exception as e:
+                print(f"Erro inesperado: {e}")
+            finally:
+                self.queue.task_done()

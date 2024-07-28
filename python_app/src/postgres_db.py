@@ -1,13 +1,10 @@
-import os
 import psycopg2
-import pytz
 from datetime import datetime
-
+import pytz
 
 class PostgresDatabase:
 
     def __init__(self, sql_path="src/init.sql"):
-
         self.db_config = {
             'database': "postgres",
             'user': "admin",
@@ -15,9 +12,7 @@ class PostgresDatabase:
             'host': "postgres",
             'port': "5432"
         }
-
         self.sql_path = sql_path
-        self.initialize_database()
         self.tz = pytz.timezone('America/Sao_Paulo')
 
     def get_connection(self):
@@ -37,32 +32,50 @@ class PostgresDatabase:
                 cursor = conn.cursor()
                 cursor.execute(sql_script)
                 conn.commit()
-                print('\n\n\n\n\n\nScriopt SQL executado com sucesso!\n\n\n\n\n\n')
         except IOError as e:
             raise RuntimeError(f"Error: {e}")
         except psycopg2.Error as e:
             raise RuntimeError(f"PostgreSQL error: {e}")
-        
-    def insert_moisture(self, value):
+
+    def insert_moisture(self, timestamp, upi_id, value):
         """Insere dados na tabela 'moisture'."""
-        timestamp = datetime.now().astimezone(self.tz)
+        timestamp = datetime.fromisoformat(timestamp).astimezone(self.tz)
         try:
             with self.get_connection() as conn:
                 cursor = conn.cursor()
-                cursor.execute("INSERT INTO moisture (time, value) VALUES (%s, %s)", (timestamp, value))
+                cursor.execute(
+                    "INSERT INTO moisture (time, upi_id, value) VALUES (%s, %s, %s)",
+                    (timestamp, upi_id, value)
+                )
                 conn.commit()
-                #print("Dados de umidade inseridos com sucesso.")
         except psycopg2.Error as e:
             raise RuntimeError(f"Erro ao inserir dados de umidade: {e}")
 
-    def insert_temperature(self, value):
+    def insert_temperature(self, timestamp, upi_id, value):
         """Insere dados na tabela 'temperature'."""
-        timestamp = datetime.now().astimezone(self.tz)
+        timestamp = datetime.fromisoformat(timestamp).astimezone(self.tz)
         try:
             with self.get_connection() as conn:
                 cursor = conn.cursor()
-                cursor.execute("INSERT INTO temperature (time, value) VALUES (%s, %s)", (timestamp, value))
+                cursor.execute(
+                    "INSERT INTO temperature (time, upi_id, value) VALUES (%s, %s, %s)",
+                    (timestamp, upi_id, value)
+                )
                 conn.commit()
-                #print("Dados de temperatura inseridos com sucesso.")
         except psycopg2.Error as e:
             raise RuntimeError(f"Erro ao inserir dados de temperatura: {e}")
+
+    def insert_upi(self, upi_name):
+        """Insere dados na tabela 'upis'."""
+        try:
+            with self.get_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute(
+                    "INSERT INTO upis (upi_name) VALUES (%s) RETURNING id",
+                    (upi_name,)
+                )
+                upi_id = cursor.fetchone()[0]
+                conn.commit()
+                return upi_id
+        except psycopg2.Error as e:
+            raise RuntimeError(f"Erro ao inserir dados de UPI: {e}")

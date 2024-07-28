@@ -1,1 +1,0 @@
-print('EXECUTOU O SCRIPT')

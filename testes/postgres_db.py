@@ -11,12 +11,12 @@ class PostgresDatabase:
             'database': "postgres",
             'user': "admin",
             'password': "admin",
-            'host': "postgres",
+            'host': "localhost",
             'port': "5432"
         }
 
         self.sql_path = sql_path
-        self.initialize_database()
+        #self.initialize_database()
 
     def get_connection(self):
         return psycopg2.connect(
@@ -76,7 +76,7 @@ class PostgresDatabase:
         try:
             with self.get_connection() as conn:
                 cursor = conn.cursor()
-                cursor.execute("INSERT INTO network_io (time, n_input, n_output) VALUES (%s, %s)", (timestamp, n_input, n_output))
+                cursor.execute("INSERT INTO network_io (time, n_input, n_output) VALUES (%s, %s, %s)", (timestamp, n_input, n_output))
                 conn.commit()
         except psycopg2.Error as e:
             raise RuntimeError(f"Erro ao inserir dados de uso de input e output de rede: {e}")

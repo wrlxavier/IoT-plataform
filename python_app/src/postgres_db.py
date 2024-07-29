@@ -39,7 +39,8 @@ class PostgresDatabase:
 
     def insert_moisture(self, timestamp, upi_id, value):
         """Insere dados na tabela 'moisture'."""
-        timestamp = datetime.fromisoformat(timestamp).astimezone(self.tz)
+        #timestamp = datetime.fromisoformat(timestamp).astimezone(self.tz)
+        timestamp = datetime.fromisoformat(timestamp)
         try:
             with self.get_connection() as conn:
                 cursor = conn.cursor()
@@ -53,7 +54,8 @@ class PostgresDatabase:
 
     def insert_temperature(self, timestamp, upi_id, value):
         """Insere dados na tabela 'temperature'."""
-        timestamp = datetime.fromisoformat(timestamp).astimezone(self.tz)
+        #timestamp = datetime.fromisoformat(timestamp).astimezone(self.tz)
+        timestamp = datetime.fromisoformat(timestamp)
         try:
             with self.get_connection() as conn:
                 cursor = conn.cursor()

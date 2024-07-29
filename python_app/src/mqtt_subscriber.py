@@ -52,10 +52,10 @@ class MQTTSubscriber:
                     # Adiciona o timestamp e valor às funções de inserção do banco de dados
                     if topic == "lucasl050503@gmail.com/UPI1/moisture":
                         self.db.insert_moisture(timestamp, 1, value)
-                        self.db.insert_moisture(timestamp, 2, 0.1*value)
+                        #self.db.insert_moisture(timestamp, 2, 0.1*value)
                     elif topic == "lucasl050503@gmail.com/UPI1/temperature":
                         self.db.insert_temperature(timestamp, 1, value)
-                        self.db.insert_temperature(timestamp, 2, 0.1*value)
+                        #self.db.insert_temperature(timestamp, 2, 0.1*value)
                     #elif topic == "lucasl050503@gmail.com/UPI2/moisture":
                     #    self.db.insert_moisture(timestamp, 2, value)
                     #elif topic == "lucasl050503@gmail.com/UPI2/temperature":

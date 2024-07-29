@@ -14,6 +14,7 @@ class PostgresDatabase:
         }
         self.sql_path = sql_path
         self.tz = pytz.timezone('America/Sao_Paulo')
+        self.initialize_database()
 
     def get_connection(self):
         return psycopg2.connect(

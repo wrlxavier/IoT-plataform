@@ -18,13 +18,13 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 13,
+  "id": 1,
   "links": [],
   "panels": [
     {
       "datasource": {
         "type": "grafana-postgresql-datasource",
-        "uid": "cdsd6ixjrqww0c"
+        "uid": "fdt8a2nvm9tkwe"
       },
       "fieldConfig": {
         "defaults": {
@@ -232,7 +232,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT\r\n  time AS \"time\",\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\n",
+          "rawSql": "SELECT\r\n  time + INTERVAL '3 hours' AS \"time\",\r\n  upi_id,\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time + INTERVAL '3 hours')\r\nAND \r\n  upi_id = $upi \r\nORDER BY\r\n  time ASC\r\n",
           "refId": "A",
           "sql": {
             "columns": [
@@ -258,7 +258,7 @@
     {
       "datasource": {
         "type": "grafana-postgresql-datasource",
-        "uid": "cdsd6ixjrqww0c"
+        "uid": "fdt8a2nvm9tkwe"
       },
       "fieldConfig": {
         "defaults": {
@@ -472,7 +472,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "WITH RankedTemperatures AS (\r\n  SELECT\r\n    time,\r\n    upi_id,\r\n    value,\r\n    ROW_NUMBER() OVER (\r\n      ORDER BY\r\n        time DESC\r\n    ) AS rn\r\n  FROM\r\n    temperature\r\n  WHERE\r\n    $__timeFilter(time)\r\n  AND \r\n    upi_id = $upi \r\n),\r\nLastValues AS (\r\n  SELECT\r\n    MAX(\r\n      CASE\r\n        WHEN rn = 1 THEN value\r\n      END\r\n    ) AS last_value,\r\n    MAX(\r\n      CASE\r\n        WHEN rn = 2 THEN value\r\n      END\r\n    ) AS second_last_value\r\n  FROM\r\n    RankedTemperatures\r\n)\r\nSELECT\r\n  last_value,\r\n  second_last_value,\r\n  CASE\r\n    WHEN second_last_value IS NULL\r\n    OR second_last_value = 0 THEN NULL\r\n    ELSE (\r\n      (last_value - second_last_value) / second_last_value\r\n    ) * 100\r\n  END AS percentage_variation\r\nFROM\r\n  LastValues;",
+          "rawSql": "WITH RankedTemperatures AS (\r\n  SELECT\r\n    time + INTERVAL '3 hours',\r\n    upi_id,\r\n    value,\r\n    ROW_NUMBER() OVER (\r\n      ORDER BY\r\n        time DESC\r\n    ) AS rn\r\n  FROM\r\n    temperature\r\n  WHERE\r\n    $__timeFilter(time + INTERVAL '3 hours')\r\n  AND \r\n    upi_id = $upi \r\n),\r\nLastValues AS (\r\n  SELECT\r\n    MAX(\r\n      CASE\r\n        WHEN rn = 1 THEN value\r\n      END\r\n    ) AS last_value,\r\n    MAX(\r\n      CASE\r\n        WHEN rn = 2 THEN value\r\n      END\r\n    ) AS second_last_value\r\n  FROM\r\n    RankedTemperatures\r\n)\r\nSELECT\r\n  last_value,\r\n  second_last_value,\r\n  CASE\r\n    WHEN second_last_value IS NULL\r\n    OR second_last_value = 0 THEN NULL\r\n    ELSE (\r\n      (last_value - second_last_value) / second_last_value\r\n    ) * 100\r\n  END AS percentage_variation\r\nFROM\r\n  LastValues;",
           "refId": "A",
           "sql": {
             "columns": [
@@ -523,7 +523,7 @@
     {
       "datasource": {
         "type": "grafana-postgresql-datasource",
-        "uid": "cdsd6ixjrqww0c"
+        "uid": "fdt8a2nvm9tkwe"
       },
       "fieldConfig": {
         "defaults": {
@@ -603,12 +603,12 @@
         {
           "datasource": {
             "type": "grafana-postgresql-datasource",
-            "uid": "cdsd6ixjrqww0c"
+            "uid": "fdt8a2nvm9tkwe"
           },
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT\r\n  time AS \"time\",\r\n  upi_id,\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time)\r\nAND\r\n  upi_id = $upi \r\nORDER BY\r\n  time ASC\r\n",
+          "rawSql": "SELECT\r\n  time + INTERVAL '3 hours' AS \"time\",\r\n  upi_id,\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time + INTERVAL '3 hours')\r\nAND\r\n  upi_id = $upi \r\nORDER BY\r\n  time ASC\r\n",
           "refId": "A",
           "sql": {
             "columns": [
@@ -635,7 +635,7 @@
     {
       "datasource": {
         "type": "grafana-postgresql-datasource",
-        "uid": "cdsd6ixjrqww0c"
+        "uid": "fdt8a2nvm9tkwe"
       },
       "fieldConfig": {
         "defaults": {
@@ -849,7 +849,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT\r\n  time AS \"time\",\r\n  value\r\nFROM\r\n  moisture\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\n",
+          "rawSql": "SELECT\r\n  time + INTERVAL '3 hours' AS \"time\",\r\n  upi_id,\r\n  value\r\nFROM\r\n  moisture\r\nWHERE\r\n  $__timeFilter(time + INTERVAL '3 hours')\r\nAND\r\n  upi_id = $upi \r\nORDER BY\r\n  time ASC\r\n",
           "refId": "A",
           "sql": {
             "columns": [
@@ -875,7 +875,7 @@
     {
       "datasource": {
         "type": "grafana-postgresql-datasource",
-        "uid": "cdsd6ixjrqww0c"
+        "uid": "fdt8a2nvm9tkwe"
       },
       "fieldConfig": {
         "defaults": {
@@ -1089,7 +1089,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "WITH RankedMoistures AS (\r\n  SELECT\r\n    time,\r\n    upi_id,\r\n    value,\r\n    ROW_NUMBER() OVER (ORDER BY time DESC) AS rn\r\n  FROM\r\n    moisture\r\n  WHERE\r\n    $__timeFilter(time)\r\n  AND \r\n    upi_id = $upi \r\n)\r\n, LastValues AS (\r\n  SELECT\r\n    MAX(CASE WHEN rn = 1 THEN value END) AS last_value,\r\n    MAX(CASE WHEN rn = 2 THEN value END) AS second_last_value\r\n  FROM\r\n    RankedMoistures\r\n)\r\nSELECT\r\n  last_value,\r\n  second_last_value,\r\n  CASE\r\n    WHEN second_last_value IS NULL OR second_last_value = 0 THEN NULL\r\n    ELSE ((last_value - second_last_value) / second_last_value) * 100\r\n  END AS percentage_variation\r\nFROM\r\n  LastValues;\r\n",
+          "rawSql": "WITH RankedMoistures AS (\r\n  SELECT\r\n    time + INTERVAL '3 hours',\r\n    upi_id,\r\n    value,\r\n    ROW_NUMBER() OVER (ORDER BY time DESC) AS rn\r\n  FROM\r\n    moisture\r\n  WHERE\r\n    $__timeFilter(time + INTERVAL '3 hours')\r\n  AND \r\n    upi_id = $upi \r\n)\r\n, LastValues AS (\r\n  SELECT\r\n    MAX(CASE WHEN rn = 1 THEN value END) AS last_value,\r\n    MAX(CASE WHEN rn = 2 THEN value END) AS second_last_value\r\n  FROM\r\n    RankedMoistures\r\n)\r\nSELECT\r\n  last_value,\r\n  second_last_value,\r\n  CASE\r\n    WHEN second_last_value IS NULL OR second_last_value = 0 THEN NULL\r\n    ELSE ((last_value - second_last_value) / second_last_value) * 100\r\n  END AS percentage_variation\r\nFROM\r\n  LastValues;\r\n",
           "refId": "A",
           "sql": {
             "columns": [
@@ -1115,7 +1115,7 @@
     {
       "datasource": {
         "type": "grafana-postgresql-datasource",
-        "uid": "cdsd6ixjrqww0c"
+        "uid": "fdt8a2nvm9tkwe"
       },
       "fieldConfig": {
         "defaults": {
@@ -1168,7 +1168,7 @@
           "calcs": [
             "lastNotNull"
           ],
-          "fields": "",
+          "fields": "/^value$/",
           "values": false
         },
         "showUnfilled": true,
@@ -1188,7 +1188,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT\r\n  time AS \"time\",\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\n",
+          "rawSql": "SELECT\r\n  time + INTERVAL '3 hours' AS \"time\",\r\n  upi_id,\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time + INTERVAL '3 hours')\r\nAND \r\n  upi_id = $upi \r\nORDER BY\r\n  time ASC\r\n",
           "refId": "A",
           "sql": {
             "columns": [
@@ -1215,7 +1215,7 @@
     {
       "datasource": {
         "type": "grafana-postgresql-datasource",
-        "uid": "cdsd6ixjrqww0c"
+        "uid": "fdt8a2nvm9tkwe"
       },
       "fieldConfig": {
         "defaults": {
@@ -1286,7 +1286,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT\r\n  --time AS \"time\",\r\n  value\r\nFROM\r\n  moisture\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\n",
+          "rawSql": "SELECT\r\n  time + INTERVAL '3 hours' AS \"time\",\r\n  upi_id,\r\n  value\r\nFROM\r\n  moisture\r\nWHERE\r\n  $__timeFilter(time + INTERVAL '3 hours')\r\nAND \r\n  upi_id = $upi \r\nORDER BY\r\n  time ASC\r\n",
           "refId": "A",
           "sql": {
             "columns": [
@@ -1313,7 +1313,7 @@
     {
       "datasource": {
         "type": "grafana-postgresql-datasource",
-        "uid": "cdsd6ixjrqww0c"
+        "uid": "fdt8a2nvm9tkwe"
       },
       "fieldConfig": {
         "defaults": {
@@ -1398,7 +1398,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT\r\n  time AS \"time\",\r\n  upi_id,\r\n  value\r\nFROM\r\n  moisture\r\nWHERE\r\n  $__timeFilter(time)\r\nAND\r\n  upi_id = $upi \r\nORDER BY\r\n  time ASC\r\n",
+          "rawSql": "SELECT\r\n  time + INTERVAL '3 hours' AS \"time\",\r\n  upi_id,\r\n  value\r\nFROM\r\n  moisture\r\nWHERE\r\n  $__timeFilter(time + INTERVAL '3 hours')\r\nAND\r\n  upi_id = $upi \r\nORDER BY\r\n  time ASC\r\n",
           "refId": "A",
           "sql": {
             "columns": [
@@ -1521,8 +1521,8 @@
       {
         "current": {
           "selected": true,
-          "text": "2",
-          "value": "2"
+          "text": "1",
+          "value": "1"
         },
         "hide": 0,
         "includeAll": false,
@@ -1531,12 +1531,12 @@
         "name": "upi",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "1",
             "value": "1"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "2",
             "value": "2"
           }
@@ -1570,6 +1570,6 @@
   "timezone": "browser",
   "title": "UPI 1 - Unidade de Produção Independente",
   "uid": "adt0snywrn474d",
-  "version": 24,
+  "version": 3,
   "weekStart": ""
 }

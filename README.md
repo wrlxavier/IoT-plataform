@@ -2,6 +2,13 @@
 
 # 📦 UPI - Unidade de Produção Independente
 
+
+Este trabalho foi desenvolvido pelo trio:
+- Emanuella Feital Ferraz
+- Lucas Emanuel Lobo Costa
+- Warley Fernandes Xavier da Silva
+
+
 ## 🐳 Configuração do Docker
 
 O Docker é usado para garantir que a aplicação Python, que gerencia os registros dos dados nos tópicos MQTT, o Grafana e o banco de dados Postgres rodem em containers. Abaixo estão os comandos para construir e executar os containers:

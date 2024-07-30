@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS moisture (
+    time TIMESTAMP NOT NULL, 
+    upi_id INTEGER NOT NULL,
+    value DECIMAL(5, 2) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS temperature (
+    time TIMESTAMP NOT NULL, 
+    upi_id INTEGER NOT NULL,
+    value DECIMAL(5, 2) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS upis (
+    id SERIAL PRIMARY KEY,
+    upi_name TEXT
+);
+
+CREATE TABLE IF NOT EXISTS alarm (
+    time TIMESTAMP NOT NULL,
+    upi INTEGER NOT NULL,
+    alarm_type TEXT NOT NULL,
+    value FLOAT NOT NULL
+);

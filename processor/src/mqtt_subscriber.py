@@ -3,14 +3,20 @@ import threading
 import queue
 import json  # Importa o módulo JSON para processar as mensagens
 
+
+MOISTURE_LIMIT_1 = 20
+MOISTURE_LIMIT_2 = 80
+TEMPERATURE_LIMIT_1 = 25
+TEMPERATURE_LIMIT_2 = 30
+
+
 class MQTTSubscriber:
 
-    def __init__(self, broker_config, db):
+    def __init__(self, broker_config):
         self.broker = broker_config['broker']
         self.port = broker_config['port']
         self.user = broker_config['user']
         self.password = broker_config['password']
-        self.db = db
         self.client = mqtt.Client()
 
         self.client.username_pw_set(self.user, self.password)
@@ -31,7 +37,6 @@ class MQTTSubscriber:
         client.subscribe("lucasl050503@gmail.com/UPI1/temperature")
         client.subscribe("lucasl050503@gmail.com/UPI2/moisture")
         client.subscribe("lucasl050503@gmail.com/UPI2/temperature")
-        client.subscribe("lucasl050503@gmail.com/alarm")
 
     def on_message(self, client, userdata, msg):
         topic = msg.topic
@@ -52,18 +57,49 @@ class MQTTSubscriber:
 
                 if timestamp and value is not None:
 
+                    
+
+                    
                     if topic == "lucasl050503@gmail.com/UPI1/moisture":
-                        self.db.insert_moisture(timestamp, 1, value)
+                        if value < MOISTURE_LIMIT_1 or value > MOISTURE_LIMIT_2:
+                            alarm_message = json.dumps({
+                                "timestamp": timestamp,
+                                "upi": 1,
+                                "alarm_type": "moisture",
+                                "value": value
+                            })
+                            self.client.publish("lucasl050503@gmail.com/alarm", alarm_message)
+                        
                     elif topic == "lucasl050503@gmail.com/UPI1/temperature":
-                        self.db.insert_temperature(timestamp, 1, value)
+                        if value < TEMPERATURE_LIMIT_1 or value > TEMPERATURE_LIMIT_2:
+                            alarm_message = json.dumps({
+                                "timestamp": timestamp,
+                                "upi": 1,
+                                "alarm_type": "temperature",
+                                "value": value
+                            })
+                            self.client.publish("lucasl050503@gmail.com/alarm", alarm_message)
+                        
                     elif topic == "lucasl050503@gmail.com/UPI2/moisture":
-                        self.db.insert_moisture(timestamp, 2, value)
+                        if value < MOISTURE_LIMIT_1 or value > MOISTURE_LIMIT_2:
+                            alarm_message = json.dumps({
+                                "timestamp": timestamp,
+                                "upi": 2,
+                                "alarm_type": "moisture",
+                                "value": value
+                            })
+                            self.client.publish("lucasl050503@gmail.com/alarm", alarm_message)
+                        
                     elif topic == "lucasl050503@gmail.com/UPI2/temperature":
-                        self.db.insert_temperature(timestamp, 2, value)
-                    elif topic == "lucasl050503@gmail.com/alarm":
-                        upi = message.get('upi')
-                        alarm_type = message.get('alarm_type')
-                        self.db.insert_alarm(timestamp, upi, alarm_type, value)
+                        if value < TEMPERATURE_LIMIT_1 or value > TEMPERATURE_LIMIT_2:
+                            alarm_message = json.dumps({
+                                "timestamp": timestamp,
+                                "upi": 2,
+                                "alarm_type": "temperature",
+                                "value": value
+                            })
+                            self.client.publish("lucasl050503@gmail.com/alarm", alarm_message)
+                        
                     
                 else:
                     print(f"Mensagem inválida: {payload}")

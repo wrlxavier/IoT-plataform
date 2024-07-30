@@ -32,6 +32,7 @@
             "mode": "thresholds"
           },
           "mappings": [],
+          "noValue": "---",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -57,7 +58,7 @@
         "root": {
           "background": {
             "color": {
-              "fixed": "dark-yellow"
+              "fixed": "#23282f"
             },
             "image": {
               "mode": "fixed"
@@ -266,6 +267,7 @@
             "mode": "thresholds"
           },
           "mappings": [],
+          "noValue": "---",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -297,7 +299,7 @@
         "root": {
           "background": {
             "color": {
-              "fixed": "transparent"
+              "fixed": "#23282f"
             },
             "image": {
               "mode": "fixed"
@@ -564,6 +566,8 @@
             }
           },
           "mappings": [],
+          "max": 50,
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -608,7 +612,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT\r\n  time + INTERVAL '3 hours' AS \"time\",\r\n  upi_id,\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time + INTERVAL '3 hours')\r\nAND\r\n  upi_id = $upi \r\nORDER BY\r\n  time ASC\r\n",
+          "rawSql": "SELECT\r\n  time + INTERVAL '3 hours' AS \"time\",\r\n  --upi_id,\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time + INTERVAL '3 hours')\r\nAND\r\n  upi_id = $upi \r\nORDER BY\r\n  time ASC\r\n",
           "refId": "A",
           "sql": {
             "columns": [
@@ -643,6 +647,7 @@
             "mode": "thresholds"
           },
           "mappings": [],
+          "noValue": "---",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -674,7 +679,7 @@
         "root": {
           "background": {
             "color": {
-              "fixed": "transparent"
+              "fixed": "#23282f"
             },
             "image": {
               "mode": "fixed"
@@ -883,6 +888,7 @@
             "mode": "thresholds"
           },
           "mappings": [],
+          "noValue": "---",
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -914,7 +920,7 @@
         "root": {
           "background": {
             "color": {
-              "fixed": "transparent"
+              "fixed": "#23282f"
             },
             "image": {
               "mode": "fixed"
@@ -1223,6 +1229,8 @@
             "mode": "thresholds"
           },
           "mappings": [],
+          "max": 100,
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1266,7 +1274,7 @@
           "calcs": [
             "lastNotNull"
           ],
-          "fields": "",
+          "fields": "/^value$/",
           "values": false
         },
         "showUnfilled": true,
@@ -1354,6 +1362,8 @@
             }
           },
           "mappings": [],
+          "max": 100,
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1398,7 +1408,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT\r\n  time + INTERVAL '3 hours' AS \"time\",\r\n  upi_id,\r\n  value\r\nFROM\r\n  moisture\r\nWHERE\r\n  $__timeFilter(time + INTERVAL '3 hours')\r\nAND\r\n  upi_id = $upi \r\nORDER BY\r\n  time ASC\r\n",
+          "rawSql": "SELECT\r\n  time + INTERVAL '3 hours' AS \"time\",\r\n  --upi_id,\r\n  value\r\nFROM\r\n  moisture\r\nWHERE\r\n  $__timeFilter(time + INTERVAL '3 hours')\r\nAND\r\n  upi_id = $upi \r\nORDER BY\r\n  time ASC\r\n",
           "refId": "A",
           "sql": {
             "columns": [
@@ -1425,7 +1435,7 @@
     {
       "datasource": {
         "type": "grafana-postgresql-datasource",
-        "uid": "cdsd6ixjrqww0c"
+        "uid": "fdt8a2nvm9tkwe"
       },
       "fieldConfig": {
         "defaults": {
@@ -1487,8 +1497,9 @@
           },
           "editorMode": "code",
           "format": "table",
+          "hide": false,
           "rawQuery": true,
-          "rawSql": "SELECT\r\n  time AS \"time\",\r\n  value\r\nFROM\r\n  temperature\r\nWHERE\r\n  $__timeFilter(time)\r\nORDER BY\r\n  time ASC\r\nlimit 2",
+          "rawSql": "SELECT\r\n  time,\r\n  alarm_type,\r\n  value\r\nFROM\r\n  alarm \r\nWHERE\r\n  $__timeFilter(time)\r\nAND \r\n  upi = $upi \r\nORDER BY\r\n  time  ASC\r\n",
           "refId": "A",
           "sql": {
             "columns": [
@@ -1520,9 +1531,9 @@
     "list": [
       {
         "current": {
-          "selected": true,
-          "text": "1",
-          "value": "1"
+          "selected": false,
+          "text": "2",
+          "value": "2"
         },
         "hide": 0,
         "includeAll": false,
@@ -1531,12 +1542,12 @@
         "name": "upi",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "1",
             "value": "1"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "2",
             "value": "2"
           }
@@ -1570,6 +1581,6 @@
   "timezone": "browser",
   "title": "UPI 1 - Unidade de Produção Independente",
   "uid": "adt0snywrn474d",
-  "version": 3,
+  "version": 12,
   "weekStart": ""
 }

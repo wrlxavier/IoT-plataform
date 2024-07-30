@@ -82,3 +82,17 @@ class PostgresDatabase:
                 return upi_id
         except psycopg2.Error as e:
             raise RuntimeError(f"Erro ao inserir dados de UPI: {e}")
+        
+    def insert_alarm(self, timestamp, upi, alarm_type, value):
+            """Insere dados na tabela 'alarm'."""
+            timestamp = datetime.fromisoformat(timestamp)
+            try:
+                with self.get_connection() as conn:
+                    cursor = conn.cursor()
+                    cursor.execute(
+                        "INSERT INTO alarm (time, upi, alarm_type, value) VALUES (%s, %s, %s, %s)",
+                        (timestamp, upi, alarm_type, value)
+                    )
+                    conn.commit()
+            except psycopg2.Error as e:
+                raise RuntimeError(f"Erro ao inserir dados de alarme: {e}")

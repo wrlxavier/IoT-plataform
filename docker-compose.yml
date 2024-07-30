@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: postgres
     ports:
-      - "5432:5432"
+      - "5437:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     networks:
@@ -33,6 +33,14 @@ services:
   python_app:
     build: ./python_app
     container_name: python_app
+    depends_on:
+      - postgres
+    networks:
+      - grafana_network
+
+  processor:
+    build: ./processor
+    container_name: processor
     depends_on:
       - postgres
     networks:
